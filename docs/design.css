@@ -340,25 +340,81 @@
   .apk-btn:hover svg{transform:translateY(2px);}
   .apk-btn:active{transform:translateY(0); box-shadow:0 6px 16px -8px rgba(23,163,152,0.5);}
 
-  /* ---------- projects ---------- */
-  .projects{background:var(--paper);}
-  .project-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .project-card{
-    border-radius:16px; overflow:hidden; background:var(--porcelain); border:1px solid #e7e3d8;
-    transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column;
-  }
-  .project-card:hover{transform:translateY(-5px); box-shadow:0 24px 50px -24px rgba(16,24,42,0.3);}
-  .project-thumb{
-    height:150px; position:relative; overflow:hidden;
-  }
-  .project-thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
-  .project-card:hover .project-thumb img{transform:scale(1.06);}
-  .project-info{padding:20px 22px 24px; flex:1; display:flex; flex-direction:column;}
-  .project-info h4{font-size:16px; font-family:'Space Grotesk',sans-serif; margin-bottom:8px;}
-  .project-info p{font-size:13.5px; color:var(--text-mute); line-height:1.65; flex:1;}
-  .project-tag{
-    margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--coral);
-  }
+/* ---------- projects ---------- */
+.projects{
+  background:var(--paper);
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.project-card{
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--porcelain);
+  border:1px solid #e7e3d8;
+  transition:transform .25s ease, box-shadow .25s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 50px -24px rgba(16,24,42,0.3);
+}
+
+/* SHOW WHOLE IMAGE */
+.project-thumb{
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:#f6f4ee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.project-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  transition:transform .4s ease;
+}
+
+.project-card:hover .project-thumb img{
+  transform:scale(1.03);
+}
+
+.project-info{
+  padding:20px 22px 24px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.project-info h4{
+  font-size:16px;
+  font-family:'Space Grotesk',sans-serif;
+  margin-bottom:8px;
+}
+
+.project-info p{
+  font-size:13.5px;
+  color:var(--text-mute);
+  line-height:1.65;
+  flex:1;
+}
+
+.project-tag{
+  margin-top:14px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--coral);
+}
 
   /* ---------- contact ---------- */
   .contact{
