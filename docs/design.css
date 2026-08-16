@@ -252,6 +252,7 @@
   .sw-feature{
     background:var(--paper); border:1px solid #e7e3d8; border-radius:18px;
     display:grid; grid-template-columns:1.1fr 1fr; gap:0; overflow:hidden;
+    margin-bottom: 40px;
   }
   .sw-shots{
     display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:22px; background:var(--ink);
