@@ -149,31 +149,31 @@
   .btn-outline{border-color:var(--ink-line); color:var(--text-on-ink);}
   .btn-outline:hover{border-color:var(--teal); color:var(--teal);}
 
-  /* editor card (hero visual, replaces missing photo) */
-  .editor-card{
-    background:var(--ink-soft); border:1px solid var(--ink-line); border-radius:16px;
-    overflow:hidden; box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+  /* photo card (hero visual) */
+  .photo-card{
+    position:relative; border-radius:20px; overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+    border:1px solid var(--ink-line);
   }
-  .editor-bar{
-    display:flex; align-items:center; gap:7px; padding:12px 16px; background:#141d35;
-    border-bottom:1px solid var(--ink-line);
+  .photo-card::before{
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, rgba(16,24,42,0) 55%, rgba(16,24,42,0.75) 100%);
   }
-  .editor-bar span{width:10px; height:10px; border-radius:50%; display:inline-block;}
-  .editor-bar .r{background:#ff5f57;} .editor-bar .y{background:#febc2e;} .editor-bar .g{background:#28c840;}
-  .editor-bar .fname{margin-left:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-on-ink-mute);}
-  .editor-body{padding:30px 26px;}
-  .monogram{
-    width:84px; height:84px; border-radius:18px;
-    background:linear-gradient(135deg, var(--coral), var(--gold) 60%, var(--teal));
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px; color:#101826;
-    margin-bottom:22px;
+  .photo-card img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:566/700;}
+  .photo-tag{
+    position:absolute; top:16px; left:16px; z-index:2;
+    display:flex; align-items:center; gap:8px;
+    background:rgba(16,24,42,0.55); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.15); border-radius:20px;
+    padding:6px 12px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#fff;
   }
-  .code-line{font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:2; color:var(--text-on-ink-mute);}
-  .code-line .k{color:#ff9d8a;}
-  .code-line .s{color:var(--teal);}
-  .code-line .p{color:var(--gold);}
-  .badges{display:flex; gap:8px; margin-top:20px; flex-wrap:wrap;}
+  .photo-tag .dot{width:7px; height:7px; border-radius:50%; background:var(--teal); display:inline-block;}
+  .photo-caption{
+    position:absolute; bottom:0; left:0; right:0; z-index:2; padding:18px 20px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-on-ink-mute);
+  }
+  .photo-caption strong{color:#fff; font-family:'Space Grotesk',sans-serif; font-size:14px; display:block; margin-bottom:2px;}
+  .badges{display:flex; gap:8px; margin-top:18px; flex-wrap:wrap;}
   .badge{
     font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:5px 10px; border-radius:6px;
     background:rgba(23,163,152,0.12); color:var(--teal); border:1px solid rgba(23,163,152,0.3);
@@ -204,8 +204,12 @@
   .experience{background:var(--porcelain);}
   .exp-card{
     background:var(--paper); border-radius:18px; border:1px solid #e7e3d8;
-    padding:38px; display:grid; grid-template-columns:1fr; gap:0;
+    padding:38px; display:grid; grid-template-columns:1.3fr 1fr; gap:34px; align-items:start;
   }
+  .exp-gallery{display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:10px;}
+  .exp-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px; display:block;}
+  .exp-gallery .g-big{grid-column:1 / 3; aspect-ratio:4/3;}
+  .exp-gallery .g-small{aspect-ratio:1/1;}
   .exp-head{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
   .exp-role{font-size:21px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
   .pill{
@@ -221,26 +225,57 @@
   }
 
   /* student builds */
-  .builds{margin-top:44px;}
-  .builds-label{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px; margin-bottom:22px; color:var(--coral);}
-  .build-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .builds{margin-top:56px;}
+  .builds-label{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; margin-bottom:26px;}
+  .build-group-label{
+    display:flex; align-items:center; gap:9px; font-family:'IBM Plex Mono',monospace;
+    font-size:13px; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-mute);
+    margin-bottom:16px;
+  }
+  .build-group-label.sw-label{margin-top:36px;}
+  .group-dot{width:8px; height:8px; border-radius:50%; display:inline-block;}
+  .group-dot.hw{background:var(--teal);}
+  .group-dot.sw{background:var(--coral);}
+  .build-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
   .build-card{
     background:var(--paper); border-radius:16px; overflow:hidden; border:1px solid #e7e3d8;
     transition:transform .25s ease, box-shadow .25s ease;
   }
   .build-card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(16,24,42,0.25);}
   .build-visual{
-    height:170px; position:relative; display:flex; align-items:center; justify-content:center;
+    height:140px; position:relative; overflow:hidden;
   }
-  .build-visual.hardware{background:linear-gradient(135deg,#0f2f2c,#155c52);}
-  .build-visual.software{background:linear-gradient(135deg,#16233f,#1b3a6b);}
+  .build-visual img{width:100%; height:100%; object-fit:cover; display:block;}
+  .build-visual::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(16,24,42,0) 55%, rgba(16,24,42,0.65) 100%);
+  }
   .build-visual .tag{
-    position:absolute; top:14px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px;
-    color:rgba(255,255,255,0.7); letter-spacing:0.04em; text-transform:uppercase;
+    position:absolute; top:12px; left:12px; z-index:1; font-family:'IBM Plex Mono',monospace; font-size:10.5px;
+    color:#fff; letter-spacing:0.04em; text-transform:uppercase;
+    background:rgba(16,24,42,0.55); padding:4px 8px; border-radius:12px; backdrop-filter:blur(4px);
   }
-  .build-body{padding:20px 22px 24px;}
-  .build-body h4{font-family:'Space Grotesk',sans-serif; font-size:16px; margin-bottom:6px;}
-  .build-body p{font-size:13.5px; color:var(--text-mute); line-height:1.6;}
+  .build-body{padding:16px 16px 18px;}
+  .build-body h4{font-family:'Space Grotesk',sans-serif; font-size:14.5px; margin-bottom:6px;}
+  .build-body p{font-size:12.5px; color:var(--text-mute); line-height:1.55;}
+
+  /* software feature card */
+  .sw-feature{
+    background:var(--paper); border:1px solid #e7e3d8; border-radius:18px;
+    display:grid; grid-template-columns:1.1fr 1fr; gap:0; overflow:hidden;
+  }
+  .sw-shots{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:22px; background:var(--ink);
+  }
+  .sw-shots img{width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:8px; display:block; border:1px solid var(--ink-line);}
+  .sw-info{padding:30px 32px;}
+  .sw-info h4{font-family:'Space Grotesk',sans-serif; font-size:19px; margin:10px 0 12px;}
+  .sw-info p{font-size:14px; color:var(--text-mute); line-height:1.75; margin-bottom:18px;}
+  .tag.sw-tag{
+    position:static; display:inline-block; background:rgba(255,100,82,0.12); color:var(--coral-dim);
+    border:1px solid rgba(255,100,82,0.3); font-family:'IBM Plex Mono',monospace; font-size:11px;
+    padding:5px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.04em;
+  }
 
   /* ---------- projects ---------- */
   .projects{background:var(--paper);}
@@ -252,12 +287,9 @@
   .project-card:hover{transform:translateY(-5px); box-shadow:0 24px 50px -24px rgba(16,24,42,0.3);}
   .project-thumb{
     height:150px; position:relative; overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
   }
-  .project-thumb svg{width:56px; height:56px; opacity:0.9;}
-  .thumb-1{background:linear-gradient(135deg,#0e6e63,#17a398 65%,#7fe6d6);}
-  .thumb-2{background:linear-gradient(135deg,#3a0f14,#c0392b 55%,#ff6452);}
-  .thumb-3{background:linear-gradient(135deg,#0c1425,#22314f 60%,#4b5d84);}
+  .project-thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+  .project-card:hover .project-thumb img{transform:scale(1.06);}
   .project-info{padding:20px 22px 24px; flex:1; display:flex; flex-direction:column;}
   .project-info h4{font-size:16px; font-family:'Space Grotesk',sans-serif; margin-bottom:8px;}
   .project-info p{font-size:13.5px; color:var(--text-mute); line-height:1.65; flex:1;}
@@ -292,7 +324,11 @@
     .hero-grid{grid-template-columns:1fr;}
     .about-grid{grid-template-columns:1fr; gap:40px;}
     .project-grid{grid-template-columns:1fr 1fr;}
-    .build-grid{grid-template-columns:1fr;}
+    .build-grid{grid-template-columns:1fr 1fr 1fr;}
+    .exp-card{grid-template-columns:1fr; gap:28px;}
+    .exp-gallery{order:-1;}
+    .sw-feature{grid-template-columns:1fr;}
+    .sw-shots{grid-template-columns:repeat(4,1fr);}
   }
   @media (max-width:640px){
     .nav-links{display:none;}
@@ -304,6 +340,9 @@
     .stat-list{grid-template-columns:1fr 1fr;}
     .exp-card{padding:26px 22px;}
     .hero-actions .btn{flex:1; justify-content:center;}
+    .build-grid{grid-template-columns:1fr 1fr;}
+    .sw-shots{grid-template-columns:1fr 1fr; gap:10px;}
+    .sw-info{padding:24px 22px;}
   }
 </style>
 </head>
@@ -344,25 +383,16 @@
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
-      <div class="editor-card reveal">
-        <div class="editor-bar">
-          <span class="r"></span><span class="y"></span><span class="g"></span>
-          <span class="fname">about-me.js</span>
+      <div>
+        <div class="photo-card reveal">
+          <span class="photo-tag"><span class="dot"></span>Available for work</span>
+          <img src="images/hero.jpg" alt="Portrait of Nikkie Jan Casuga">
+          <div class="photo-caption"><strong>Nikkie Jan Casuga</strong>Creative Developer &amp; Graphic Designer</div>
         </div>
-        <div class="editor-body">
-          <div class="monogram">NJC</div>
-          <div class="code-line">
-            <span class="k">const</span> developer = &#123;<br>
-            &nbsp;&nbsp;name: <span class="s">"Nikkie Jan Casuga"</span>,<br>
-            &nbsp;&nbsp;role: <span class="s">"Creative Developer"</span>,<br>
-            &nbsp;&nbsp;teaches: <span class="s">"Coding for Kids"</span>,<br>
-            &nbsp;&nbsp;stack: [<span class="s">"Design"</span>, <span class="s">"Code"</span>, <span class="s">"Hardware"</span>]<br>
-            &#125;;
-          </div>
-          <div class="badges">
-            <span class="badge">Available for work</span>
-            <span class="badge">Davao, PH</span>
-          </div>
+        <div class="badges">
+          <span class="badge">Software</span>
+          <span class="badge">Hardware</span>
+          <span class="badge">Networking</span>
         </div>
       </div>
     </div>
@@ -381,7 +411,7 @@
       </div>
       <div class="stat-list reveal">
         <div class="stat"><div class="n">5+</div><div class="l">TOOLS &amp; PLATFORMS TAUGHT</div></div>
-        <div class="stat"><div class="n">2</div><div class="l">STUDENT-MENTORED BUILDS</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">STUDENT-MENTORED BUILDS</div></div>
         <div class="stat"><div class="n">3</div><div class="l">DESIGN DISCIPLINES</div></div>
         <div class="stat"><div class="n">100%</div><div class="l">HANDS-ON TEACHING</div></div>
       </div>
@@ -396,52 +426,104 @@
       <p class="section-sub reveal">Teaching, mentoring, and shipping small projects with the people I teach.</p>
 
       <div class="exp-card reveal">
-        <div class="exp-head">
-          <div class="exp-role">Coding Instructor — Young Learners</div>
-          <span class="pill">Currently teaching</span>
-        </div>
-        <p>I currently teach coding to young learners, introducing them to programming logic, robotics, and app development through hands-on, age-appropriate tools. My goal is to make computational thinking fun and approachable — turning abstract concepts into projects kids can build, run, and be proud of.</p>
-        <div class="chips">
-          <span class="chip">Scratch Jr.</span>
-          <span class="chip">mBlock5</span>
-          <span class="chip">MIT App Inventor</span>
-          <span class="chip">Raspberry Pi</span>
-          <span class="chip">Arduino</span>
+        <div>
+          <div class="exp-head">
+            <div class="exp-role">Coding Instructor — Young Learners</div>
+            <span class="pill">Currently teaching</span>
+          </div>
+          <p>I currently teach coding to young learners, introducing them to programming logic, robotics, and app development through hands-on, age-appropriate tools. My goal is to make computational thinking fun and approachable — turning abstract concepts into projects kids can build, run, and be proud of.</p>
+          <div class="chips">
+            <span class="chip">Scratch Jr.</span>
+            <span class="chip">mBlock5</span>
+            <span class="chip">MIT App Inventor</span>
+            <span class="chip">Raspberry Pi</span>
+            <span class="chip">Arduino</span>
+          </div>
         </div>
 
-        <div class="builds">
-          <div class="builds-label">Student Builds I've Mentored</div>
-          <div class="build-grid">
-            <div class="build-card">
-              <div class="build-visual hardware">
-                <span class="tag">Hardware Project</span>
-                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M32 6c8 10 16 20 16 30a16 16 0 1 1-32 0c0-10 8-20 16-30Z" stroke="#eafff9" stroke-width="2.5"/>
-                  <path d="M24 38c0 4.4 3.6 8 8 8" stroke="#7fe6d6" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="build-body">
-                <h4>Tubigify</h4>
-                <p>Sensor-based rainwater filtration system that monitors water quality in real time.</p>
-              </div>
+        <div class="exp-gallery">
+          <img class="g-big" src="images/teach_group.jpg" alt="Nikkie Jan Casuga teaching MIT App Inventor at Precious International School of Davao">
+          <img class="g-small" src="images/teach_presentation.jpg" alt="Nikkie Jan Casuga presenting a coding lesson to students">
+          <img class="g-small" src="images/teach_student_computer.jpg" alt="Student building a project in MIT App Inventor">
+        </div>
+      </div>
+
+      <div class="builds reveal">
+        <div class="builds-label">Student Builds I've Mentored</div>
+
+        <div class="build-group-label">
+          <span class="group-dot hw"></span>Hardware Builds
+        </div>
+        <div class="build-grid hw-grid">
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="images/hw_tubigify.jpg" alt="Tubigify sensor-based rainwater filtration prototype">
+              <span class="tag">Hardware</span>
             </div>
-            <div class="build-card">
-              <div class="build-visual software">
-                <span class="tag">Software Project</span>
-                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="22" stroke="#cfe0ff" stroke-width="2.5"/>
-                  <path d="M32 10c6 6 9 14 9 22s-3 16-9 22c-6-6-9-14-9-22s3-16 9-22Z" stroke="#8fb1ff" stroke-width="2"/>
-                  <path d="M10 32h44" stroke="#8fb1ff" stroke-width="2"/>
-                  <circle cx="24" cy="24" r="2.5" fill="#ff6452"/>
-                  <circle cx="40" cy="20" r="2.5" fill="#e8b34a"/>
-                  <circle cx="44" cy="38" r="2.5" fill="#ff6452"/>
-                  <circle cx="20" cy="42" r="2.5" fill="#17a398"/>
-                </svg>
-              </div>
-              <div class="build-body">
-                <h4>Sulong Kalikasan</h4>
-                <p>Interactive map of environmental structures and initiatives across the globe.</p>
-              </div>
+            <div class="build-body">
+              <h4>Tubigify</h4>
+              <p>Sensor-based rainwater filtration system that monitors water quality in real time.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="images/hw_pluvitech.jpg" alt="Pluvitech responsive sensor system project display">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Pluvitech</h4>
+              <p>Responsive sensor system that reacts to rainfall to protect and manage a model structure.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="images/hw_soil_irrigation.jpg" alt="Soil irrigation system project with moisture sensors">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Soil Irrigation System</h4>
+              <p>Automated watering model that reads soil moisture and irrigates dry and wet zones on cue.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="images/hw_smart_glasses.jpg" alt="Smart glasses prototype with ultrasonic obstacle sensors">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Smart Glasses</h4>
+              <p>Wearable prototype using ultrasonic sensors to detect nearby obstacles for the wearer.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="images/hw_bike_sensor.jpg" alt="Arduino bike speed sensor prototype with LCD readout">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Bike Speed Sensor</h4>
+              <p>Arduino-based sensor rig that reads and displays cycling speed on a live LCD readout.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="build-group-label sw-label">
+          <span class="group-dot sw"></span>Software Builds
+        </div>
+        <div class="sw-feature">
+          <div class="sw-shots">
+            <img src="images/sw_app_home.jpg" alt="Women and Children Abuse Informative App home screen">
+            <img src="images/sw_app_faq.jpg" alt="App FAQ screen explaining RA 9262">
+            <img src="images/sw_app_quiz.jpg" alt="App quiz screen with multiple choice question">
+            <img src="images/sw_app_help.jpg" alt="App seek-help screen with DSWD and PNP contacts">
+          </div>
+          <div class="sw-info">
+            <span class="tag sw-tag">Software</span>
+            <h4>Women &amp; Children Abuse Informative App</h4>
+            <p>A mobile app built with a student team to raise awareness around RA 9262. It walks users through plain-language FAQs, tests understanding with an interactive quiz, and connects them directly to local support — DSWD and PNP — through a Seek Help directory.</p>
+            <div class="chips">
+              <span class="chip">MIT App Inventor</span>
+              <span class="chip">Team Project</span>
             </div>
           </div>
         </div>
@@ -458,8 +540,8 @@
 
       <div class="project-grid">
         <div class="project-card reveal">
-          <div class="project-thumb thumb-1">
-            <svg viewBox="0 0 64 64" fill="none"><path d="M32 8l20 8v14c0 13-8.6 21.4-20 26-11.4-4.6-20-13-20-26V16l20-8Z" stroke="#eafff9" stroke-width="2.5"/><path d="M23 32l6 6 12-13" stroke="#eafff9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="project-thumb">
+            <img src="images/proj1.jpg" alt="Vibrant graduation design for Colleges of Southeast Asia">
           </div>
           <div class="project-info">
             <h4>Vibrant Graduation Design</h4>
@@ -468,8 +550,8 @@
           </div>
         </div>
         <div class="project-card reveal">
-          <div class="project-thumb thumb-2">
-            <svg viewBox="0 0 64 64" fill="none"><path d="M12 46c6-16 10-24 20-24s14 8 20 24" stroke="#ffe1db" stroke-width="2.5" stroke-linecap="round"/><path d="M22 30c2-8 5-14 10-18 5 4 8 10 10 18" stroke="#ff9d8a" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div class="project-thumb">
+            <img src="images/proj2.jpg" alt="Be Brilliant neon-style digital art piece">
           </div>
           <div class="project-info">
             <h4>Artistic Design — "Be Brilliant"</h4>
@@ -478,8 +560,8 @@
           </div>
         </div>
         <div class="project-card reveal">
-          <div class="project-thumb thumb-3">
-            <svg viewBox="0 0 64 64" fill="none"><path d="M8 40c8-4 14-12 18-22 2 8 8 14 16 16-6 2-10 6-12 12-4-4-14-6-22-6Z" stroke="#e6ecff" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <div class="project-thumb">
+            <img src="images/proj3.jpg" alt="Bird in flight, a playful daily photography task">
           </div>
           <div class="project-info">
             <h4>Playful Task Photographer</h4>
