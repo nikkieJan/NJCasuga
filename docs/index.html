@@ -1,410 +1,1057 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nikkie Jan Casuga — Creative Developer &amp; Graphic Designer</title>
-<meta name="description" content="Portfolio of Nikkie Jan Casuga — Creative Developer, Graphic Designer, and Coding Instructor for young learners.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="design.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nikkie Jan Casuga — Creative Developer & Graphic Designer</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Nikkie Jan Casuga — Creative Developer, Graphic Designer, and Coding Instructor for young learners."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="design.css">
 </head>
+
 <body>
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
+
   <nav class="nav">
-    <a href="#top" class="logo"><span class="dot"></span>NJC<span class="dim">.portfolio</span></a>
+
+    <a href="#home" class="logo">
+      <span class="dot"></span>
+      NJ Casuga
+      <span class="dim">/ portfolio</span>
+    </a>
+
     <div class="nav-links">
-      <a href="#about"><span class="num">01.</span>About</a>
-      <a href="#experience"><span class="num">02.</span>Experience</a>
-      <a href="#projects"><span class="num">03.</span>Projects</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+
+      <a href="#about">
+        <span class="num">01</span> About
+      </a>
+
+      <a href="#experience">
+        <span class="num">02</span> Experience
+      </a>
+
+      <a href="#projects">
+        <span class="num">03</span> Projects
+      </a>
+
+      <a href="#contact" class="nav-cta">
+        Contact
+      </a>
+
     </div>
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+
+    <button
+      class="burger"
+      id="burger"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
   </nav>
+
+
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">01. About</a>
-    <a href="#experience">02. Experience</a>
-    <a href="#projects">03. Projects</a>
+
+    <a href="#about">01 / About</a>
+    <a href="#experience">02 / Experience</a>
+    <a href="#projects">03 / Projects</a>
     <a href="#contact">Contact</a>
+
   </div>
+
 </header>
 
-<main id="top">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">PORTFOLIO — CREATIVE DEVELOPMENT &amp; DESIGN</div>
-        <h1><span class="first">Nikkie Jan</span> <span class="last">Casuga</span><span class="cursor"></span></h1>
-        <div class="role">Creative Developer &amp; Graphic Designer</div>
-        <p class="bio">I combine cutting-edge technology with considered design — working across software, hardware, and networking to unite technical thinking with artistic expression. Currently teaching the next generation of builders how to code.</p>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+  <div class="wrap">
+
+    <div class="hero-grid">
+
+      <div class="hero-text reveal">
+
+        <div class="eyebrow">
+          Creative Developer
+        </div>
+
+        <h1>
+          <span class="first">Nikkie Jan</span>
+          <br>
+          <span class="last">Casuga</span>
+          <span class="cursor"></span>
+        </h1>
+
+        <div class="role">
+          Creative Developer & Graphic Designer
+        </div>
+
+        <p class="bio">
+          I create digital experiences, visual designs, and
+          hands-on coding projects that make technology
+          creative, useful, and approachable.
+        </p>
+
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-        </div>
-      </div>
-      <div>
-        <div class="photo-card reveal">
-          <span class="photo-tag"><span class="dot"></span>Available for work</span>
-          <img src="pictures/portrait-hero.jpg" alt="Portrait of Nikkie Jan Casuga">
-          <div class="photo-caption"><strong>Nikkie Jan Casuga</strong>Creative Developer &amp; Graphic Designer</div>
-        </div>
-        <div class="badges">
-          <span class="badge">Software</span>
-          <span class="badge">Hardware</span>
-          <span class="badge">Networking</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="wrap about-grid">
-      <div class="reveal">
-        <div class="section-label">// 01_about</div>
-        <h2 class="section-title">A little about my process</h2>
-        <div class="about-text">
-          <p>In the digital realm, I combine cutting-edge technology with stunning design, blending creativity with craft. With a passion for software, hardware, and networking, I rapidly adapt to new technologies.</p>
-          <p>My aim is to harmoniously unite technical thinking with artistic expression — whether that's a piece of graphic design, a working prototype, or a lesson plan that turns a young learner into a builder.</p>
+          <a href="#projects" class="btn btn-primary">
+            View Projects
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Get in Touch
+          </a>
+
         </div>
+
       </div>
+
+
+      <div class="photo-card reveal">
+
+        <img
+          src="pictures/profile.jpg"
+          alt="Nikkie Jan Casuga"
+        >
+
+        <div class="photo-tag">
+          <span class="dot"></span>
+          Available for projects
+        </div>
+
+        <div class="photo-caption">
+
+          <strong>Nikkie Jan Casuga</strong>
+
+          Creative Developer • Designer • Coding Instructor
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+  <div class="wrap">
+
+    <div class="section-label reveal">
+      // 01_about
+    </div>
+
+    <h2 class="section-title reveal">
+      Building with creativity and code
+    </h2>
+
+    <p class="section-sub reveal">
+      I enjoy combining technology, design, and education
+      to create meaningful digital experiences.
+    </p>
+
+
+    <div class="about-grid">
+
+      <div class="about-text reveal">
+
+        <p>
+          I am a creative developer and graphic designer
+          who enjoys turning ideas into practical and
+          engaging digital projects.
+        </p>
+
+        <p>
+          I also teach coding to young learners, helping
+          students discover programming, robotics, app
+          development, and computational thinking through
+          hands-on projects.
+        </p>
+
+      </div>
+
+
       <div class="stat-list reveal">
-        <div class="stat"><div class="n">5+</div><div class="l">TOOLS &amp; PLATFORMS TAUGHT</div></div>
-        <div class="stat"><div class="n">30</div><div class="l">STUDENT-MENTORED BUILDS</div></div>
-        <div class="stat"><div class="n">3</div><div class="l">DESIGN DISCIPLINES</div></div>
-        <div class="stat"><div class="n">100%</div><div class="l">HANDS-ON TEACHING</div></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- EXPERIENCE -->
+        <div class="stat">
+          <div class="n">05+</div>
+          <div class="l">Coding Platforms</div>
+        </div>
+
+        <div class="stat">
+          <div class="n">∞</div>
+          <div class="l">Ideas to Build</div>
+        </div>
+
+        <div class="stat">
+          <div class="n">01</div>
+          <div class="l">Creative Approach</div>
+        </div>
+
+        <div class="stat">
+          <div class="n">100%</div>
+          <div class="l">Hands-on Learning</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
 <section class="experience" id="experience">
-    <div class="wrap">
-      <div class="section-label reveal">// 02_experience</div>
-      <h2 class="section-title reveal">Where I've been building</h2>
-      <p class="section-sub reveal">Teaching, mentoring, and shipping small projects with the people I teach.</p>
 
-      <div class="exp-card reveal">
+  <div class="wrap">
 
-        <div class="exp-left">
-          <div class="exp-head">
-            <div class="exp-role">Coding Instructor — Young Learners</div>
-            <span class="pill">Currently teaching</span>
-          </div>
-          <p>I currently teach coding to young learners, introducing them to programming logic, robotics, and app development through hands-on, age-appropriate tools. My goal is to make computational thinking fun and approachable — turning abstract concepts into projects kids can build, run, and be proud of.</p>
-          <div class="chips">
-            <span class="chip">Scratch</span>
-            <span class="chip">mBlock5</span>
-            <span class="chip">MIT App Inventor</span>
-            <span class="chip">Raspberry Pi</span>
-            <span class="chip">Arduino</span>
-          </div>
-
-          <!-- tools I teach with -->
-          <div class="tools-teach">
-            <div class="tools-heading">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tools-heading-icon"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              Tools I Teach With
-            </div>
-            <div class="tools-grid">
-
-              <div class="tool-card">
-                <div class="tool-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="24" cy="40" rx="14" ry="3" fill="#f0ad4e" opacity=".35"/>
-                    <path d="M24 8c-2.6 0-4.7 1.8-5.4 4.2-2.2-1-4.9-.5-6.5 1.4-1.6 1.9-1.7 4.6-.4 6.6C9.4 21 8 23.3 8 26c0 4.4 4.5 7.8 10 7.8h1.3l-1.8 3.2c-.3.6.1 1.3.8 1.3h3.4c.5 0 1-.3 1.2-.8l1.9-3.9c.4 0 .8.1 1.2.1s.8 0 1.2-.1l1.9 3.9c.2.5.7.8 1.2.8h3.4c.7 0 1.1-.7.8-1.3L38.7 33.8H40c5.5 0 10-3.4 10-7.8 0-2.7-1.4-5-3.7-6.8 1.3-2 1.2-4.7-.4-6.6-1.6-1.9-4.3-2.4-6.5-1.4C38.7 9.8 36.6 8 34 8c-1.7 0-3.2.8-4.2 2-1-.6-2.2-1-3.8-1s-2.8.4-3.8 1C21.2 8.8 19.7 8 18 8" fill="#ff8c1a" transform="translate(-4 0) scale(.86)"/>
-                    <g transform="translate(6 10)">
-                      <path d="M18 2C9.2 2 2 8.7 2 17c0 4 1.7 7.6 4.4 10.3-.2 2-1 3.7-2.2 5 2.3.3 4.7-.3 6.6-1.7 2.2.9 4.7 1.4 7.2 1.4 8.8 0 16-6.7 16-15S26.8 2 18 2Z" fill="#ff8a13"/>
-                      <circle cx="12.5" cy="15" r="2.6" fill="#2b1c10"/>
-                      <circle cx="23.5" cy="15" r="2.6" fill="#2b1c10"/>
-                      <circle cx="11.6" cy="14.1" r=".8" fill="#fff"/>
-                      <circle cx="22.6" cy="14.1" r=".8" fill="#fff"/>
-                      <path d="M13 22c1.6 1.6 3.3 1.6 5 1.6s3.4 0 5-1.6" stroke="#2b1c10" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                    </g>
-                  </svg>
-                </div>
-                <h5>Scratch Jr.</h5>
-                <p>Learn stories, animations, and basic logic.</p>
-              </div>
-
-              <div class="tool-card">
-                <div class="tool-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="9" y="12" width="30" height="24" rx="9" fill="#1b2540"/>
-                    <circle cx="18.5" cy="23" r="3.4" fill="#fff"/>
-                    <circle cx="29.5" cy="23" r="3.4" fill="#fff"/>
-                    <circle cx="18.5" cy="23" r="1.4" fill="#1b2540"/>
-                    <circle cx="29.5" cy="23" r="1.4" fill="#1b2540"/>
-                    <rect x="20" y="30" width="8" height="2.6" rx="1.3" fill="#17a398"/>
-                    <rect x="21.5" y="6" width="5" height="7" rx="2.5" fill="#1b2540"/>
-                    <circle cx="24" cy="7.4" r="1.6" fill="#17a398"/>
-                    <rect x="4" y="20" width="5" height="8" rx="2.5" fill="#1b2540"/>
-                    <rect x="39" y="20" width="5" height="8" rx="2.5" fill="#1b2540"/>
-                  </svg>
-                </div>
-                <h5>mBlock5</h5>
-                <p>Block-based coding for robotics and AI projects.</p>
-              </div>
-
-              <div class="tool-card">
-                <div class="tool-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="24,6 34,12 34,24 24,30 14,24 14,12" fill="#8c52d9"/>
-                    <polygon points="24,18 34,24 24,30 14,24" fill="#f0ad4e"/>
-                    <circle cx="19" cy="14" r="1.6" fill="#fff"/>
-                    <circle cx="29" cy="14" r="1.6" fill="#fff"/>
-                    <rect x="20.5" y="30" width="7" height="12" rx="3.4" fill="#ff8c1a"/>
-                    <circle cx="24" cy="39" r="1.4" fill="#1b2540"/>
-                  </svg>
-                </div>
-                <h5>MIT App Inventor</h5>
-                <p>Build mobile apps with blocks — no code needed.</p>
-              </div>
-
-              <div class="tool-card">
-                <div class="tool-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 6c1 1.6 1 3.2-.3 4.6 1.8-.4 3.2-1.6 3.7-3.6.9 1.7.7 3.4-.7 4.9 1.9 0 3.5-.9 4.4-3 .4 2-.2 3.6-2 4.9 1.8.5 3.6 0 5-1.8-.1 2.1-1.3 3.5-3.5 4.1" fill="none" stroke="#3c8f3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M24 15c-7 0-11 5.3-11 12.5C13 35 17.7 41 24 41s11-6 11-13.5C35 20.3 31 15 24 15Z" fill="#c81f3c"/>
-                    <circle cx="19" cy="24" r="2" fill="#8f1030" opacity=".55"/>
-                    <circle cx="27" cy="27" r="1.6" fill="#8f1030" opacity=".55"/>
-                    <circle cx="21" cy="32" r="1.6" fill="#8f1030" opacity=".55"/>
-                  </svg>
-                </div>
-                <h5>Raspberry Pi</h5>
-                <p>Explore computing, Python, and real-world projects.</p>
-              </div>
-
-              <div class="tool-card">
-                <div class="tool-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 24a6.2 6.2 0 1 1 6.2 6.2c-2.6 0-4.2-1.7-5.4-3.6M34 24a6.2 6.2 0 1 0-6.2 6.2c2.6 0 4.2-1.7 5.4-3.6" stroke="#17a398" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-                    <circle cx="12.6" cy="24" r="1.7" fill="#17a398"/>
-                    <circle cx="35.4" cy="24" r="1.7" fill="#17a398"/>
-                  </svg>
-                </div>
-                <h5>Arduino</h5>
-                <p>Electronics and programming for makers.</p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- approach banner -->
-          <div class="approach-banner">
-            <span class="approach-icon">★</span>
-            <span><strong>My Approach:</strong> Hands-on learning &bull; Project-based &bull; Age-appropriate &bull; Encouraging creativity</span>
-          </div>
-        </div>
-
-        <div class="exp-gallery">
-          <img class="g-big" src="pictures/teach_group.jpg" alt="Nikkie Jan Casuga teaching MIT App Inventor at Precious International School of Davao">
-          <img class="g-small" src="pictures/teaching2.jpg" alt="Nikkie Jan Casuga presenting a coding lesson to students">
-          <img class="g-small" src="pictures/teaching3.jpg" alt="Student building a project in MIT App Inventor">
-        </div>
-
-      </div>
-
-      <div class="builds reveal">
-        <div class="builds-label">Student Builds I've Mentored</div>
-
-        <div class="build-group-label">
-          <span class="group-dot hw"></span>Hardware Builds
-        </div>
-        <div class="build-grid hw-grid">
-          <div class="build-card">
-            <div class="build-visual">
-              <img src="pictures/hw_tubigify.jpg" alt="Tubigify sensor-based rainwater filtration prototype">
-              <span class="tag">Hardware</span>
-            </div>
-            <div class="build-body">
-              <h4>Tubigify</h4>
-              <p>Sensor-Based Rainwater Filtration System with Real-Time Water Quality Monitoring and Automated Plant Irrigation.</p>
-            </div>
-          </div>
-          <div class="build-card">
-            <div class="build-visual">
-              <img src="pictures/hw_pluvitech.jpg" alt="Pluvitech responsive sensor system project display">
-              <span class="tag">Hardware</span>
-            </div>
-            <div class="build-body">
-              <h4>Pluvitech</h4>
-              <p>Automated Rainfall-Responsive Clothesline Protection System Using Sensors.</p>
-            </div>
-          </div>
-          <div class="build-card">
-            <div class="build-visual">
-              <img src="pictures/hw_soil_irrigation.jpg" alt="Soil irrigation system project with moisture sensors">
-              <span class="tag">Hardware</span>
-            </div>
-            <div class="build-body">
-              <h4>Soil Irrigation System</h4>
-              <p>Automated watering model that reads soil moisture and irrigates dry and wet zones on cue.</p>
-            </div>
-          </div>
-          <div class="build-card">
-            <div class="build-visual">
-              <img src="pictures/hw_smart_glasses.jpg" alt="Smart glasses prototype with ultrasonic obstacle sensors">
-              <span class="tag">Hardware</span>
-            </div>
-            <div class="build-body">
-              <h4>Smart Glasses</h4>
-              <p>Wearable prototype using ultrasonic sensors to detect nearby obstacles for the wearer.</p>
-            </div>
-          </div>
-          <div class="build-card">
-            <div class="build-visual">
-              <img src="pictures/hw_bike_sensor.jpg" alt="Arduino bike speed sensor prototype with LCD readout">
-              <span class="tag">Hardware</span>
-            </div>
-            <div class="build-body">
-              <h4>Bike Speed Sensor</h4>
-              <p>Arduino-based sensor rig that reads and displays cycling speed on a live LCD readout.</p>
-            </div>
-          </div>
-        </div>
-<!-- SOFTWARE PROJECT 1 -->
-        <div class="build-group-label sw-label">
-          <span class="group-dot sw"></span>Software Builds
-        </div>
-
-        <div class="sw-feature">
-          <div class="sw-shots">
-            <img src="pictures/app-slide1.jpg" alt="Women and Children Abuse Informative App home screen">
-            <img src="pictures/app-slide2.jpg" alt="App FAQ screen explaining RA 9262">
-            <img src="pictures/app-slide3.jpg" alt="App quiz screen with multiple choice question">
-            <img src="pictures/app-slide4.jpg" alt="App seek-help screen with DSWD and PNP contacts">
-          </div>
-          <div class="sw-info">
-            <span class="tag sw-tag">Software</span>
-            <h4>Women &amp; Children Abuse Informative App</h4>
-            <p>A mobile app built with a student team to raise awareness around RA 9262. It walks users through plain-language FAQs, tests understanding with an interactive quiz, and connects them directly to local support — DSWD and PNP — through a Seek Help directory.</p>
-            <div class="chips">
-              <span class="chip">MIT App Inventor</span>
-              <span class="chip">Team Project</span>
-            </div>
-          </div>
-        </div>
-  <!-- SOFTWARE PROJECT 1.1 -->
-  <!-- SOFTWARE PROJECT 2 -->
-        <div class="sw-feature">
-          <div class="sw-shots">
-            <img src="pictures/OC1.jpg" alt="Women and Children Abuse Informative App home screen">
-            <img src="pictures/OC2.jpg" alt="App FAQ screen explaining RA 9262">
-            <img src="pictures/OC4.jpg" alt="App quiz screen with multiple choice question">
-            <img src="pictures/OC6.jpg" alt="App seek-help screen with DSWD and PNP contacts">
-          </div>
-          <div class="sw-info">
-            <span class="tag sw-tag">Software</span>
-            <h4>OCEAN Guard: Life Below Water</h4>
-            <p>A mobile app designed to educate users about ocean life and the importance of protecting our underwater ecosystems. The app features a quiz that helps users test their knowledge and learn interesting facts about marine life. It also includes a search feature where users can discover more information about deep-sea creatures, habitats, and life below the ocean surface. The app aims to make learning about the ocean fun, simple, and engaging while encouraging users to become Ocean Guardians.</p>
-            <div class="chips">
-              <span class="chip">MIT App Inventor</span>
-              <span class="chip">Team Project</span>
-            </div>
-          </div>
-        </div>
-  <!-- SOFTWARE PROJECT 2.1 -->
-      </div>
+    <div class="section-label reveal">
+      // 02_experience
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <div class="wrap">
-      <div class="section-label reveal">// 03_projects</div>
-      <h2 class="section-title reveal">Coding Platform</h2>
-      <p class="section-sub reveal">Coding is the digital foundation that connects human thought with machine action. It allows you to transform abstract concepts into functional software, interactive games, and automated tools.</p>
+    <h2 class="section-title reveal">
+      Where I've been building
+    </h2>
 
-      <div class="project-grid">
-         <!-- PROJECT 1 -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="pictures/Scratch.png" alt="Scratch">
+    <p class="section-sub reveal">
+      Teaching, mentoring, and shipping small projects
+      with the people I teach.
+    </p>
+
+
+    <div class="exp-card reveal">
+
+
+      <!-- LEFT -->
+
+      <div class="exp-left">
+
+        <div class="exp-head">
+
+          <div class="exp-role">
+            Coding Instructor — Young Learners
           </div>
-          <div class="project-info">
-            <h4>Scratch</h4>
-            <p> is the world’s largest creative learning community for kids, where young people bring their stories, games, and animations to life and share them with peers around the world in a safe, moderated online community.</p>
-            <div class="project-tag">Block Based Coding</div>
-          </div>
+
+          <span class="pill">
+            Currently teaching
+          </span>
+
         </div>
-         <!-- PROJECT 2 -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="pictures/MBLOCK.png" alt="mBlock 5">
-          </div>
-          <div class="project-info">
-            <h4>mBlock 5</h4>
-            <p>is a block-based coding platform used to teach programming, robotics, and creative technology. Students can create interactive projects, control robots, and work with devices such as mBot using simple drag-and-drop programming blocks.</p>
-            <div class="project-tag">Block Based Coding</div>
-          </div>
+
+
+        <p>
+          I currently teach coding to young learners,
+          introducing them to programming logic, robotics,
+          and app development through hands-on,
+          age-appropriate tools. My goal is to make
+          computational thinking fun and approachable —
+          turning abstract concepts into projects kids
+          can build, run, and be proud of.
+        </p>
+
+
+        <div class="chips">
+
+          <span class="chip">Scratch Jr.</span>
+          <span class="chip">mBlock5</span>
+          <span class="chip">MIT App Inventor</span>
+          <span class="chip">Raspberry Pi</span>
+          <span class="chip">Arduino</span>
+
         </div>
-        <!-- PROJECT 3 -->
-        <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="pictures/MIT app inventor.png" alt="MIT App Inventor">
-          </div>
-          <div class="project-info">
-            <h4>MIT App Inventor</h4>
-            <p>is a beginner-friendly platform for creating mobile apps using drag-and-drop blocks. Students can design app interfaces, program interactions, and build useful Android apps without needing complex coding.</p>
-            <div class="project-tag">Block Based Coding</div>
-          </div>
-        </div>
-        <!-- PROJECT 4 -->
-         <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="pictures/Arduino.png" alt="Arduino Uno">
-          </div>
-          <div class="project-info">
-            <h4>Arduino Uno</h4>
-            <p>is a beginner-friendly microcontroller platform used to create interactive electronics projects. Students can learn programming while controlling LEDs, sensors, motors, and other electronic components.</p>
-            <div class="project-tag">Hardware & C++</div>
-          </div>
-        </div>
-        <!-- PROJECT 5 -->
-         <div class="project-card reveal">
-          <div class="project-thumb">
-            <img src="pictures/raspi.png" alt="Raspberry Pi">
-          </div>
-          <div class="project-info">
-            <h4>Raspi</h4>
-            <p>is a compact computer that helps students learn programming, electronics, and robotics through hands-on projects. It can connect with sensors, motors, cameras, and other hardware to build interactive systems..</p>
-            <div class="project-tag">Hardware & Python</div>
-          </div>
-        </div>
-         <!-- PROJECT end -->
+
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap inner">
-      <div class="section-label reveal" style="justify-content:center;">// 04_contact</div>
-      <h2 class="reveal">Let's create together</h2>
-      <p class="reveal">Open to collaborations in design, development, and tech education.</p>
+
+      <!-- RIGHT / GALLERY -->
+
+      <div class="exp-gallery">
+
+        <img
+          class="g-big"
+          src="pictures/teach_group.jpg"
+          alt="Coding instructor teaching young learners"
+        >
+
+        <img
+          class="g-small"
+          src="pictures/teaching2.jpg"
+          alt="Coding lesson with students"
+        >
+
+        <img
+          class="g-small"
+          src="pictures/teaching3.jpg"
+          alt="Student working on a coding project"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TOOLS I TEACH WITH
+    ================================================= -->
+
+    <div class="tools-teach reveal">
+
+      <div class="tools-heading">
+
+        <span class="tools-heading-icon">⌘</span>
+
+        Tools I Teach With
+
+      </div>
+
+
+      <div class="tools-grid">
+
+
+        <!-- SCRATCH -->
+
+        <a
+          class="tool-card"
+          href="https://scratch.mit.edu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="tool-icon">
+            <span class="tool-emoji">🐱</span>
+          </div>
+
+          <h5>Scratch</h5>
+
+          <p>
+            Visual programming for stories, games,
+            animations, and creative projects.
+          </p>
+
+        </a>
+
+
+        <!-- MBLOCK -->
+
+        <a
+          class="tool-card"
+          href="https://mblock.cc/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="tool-icon">
+            <span class="tool-emoji">🤖</span>
+          </div>
+
+          <h5>mBlock 5</h5>
+
+          <p>
+            Block-based coding for robots,
+            electronics, and interactive projects.
+          </p>
+
+        </a>
+
+
+        <!-- MIT APP INVENTOR -->
+
+        <a
+          class="tool-card"
+          href="https://appinventor.mit.edu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="tool-icon">
+            <span class="tool-emoji">📱</span>
+          </div>
+
+          <h5>MIT App Inventor</h5>
+
+          <p>
+            A visual platform for creating
+            beginner-friendly mobile applications.
+          </p>
+
+        </a>
+
+
+        <!-- ARDUINO -->
+
+        <a
+          class="tool-card"
+          href="https://www.arduino.cc/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="tool-icon">
+            <span class="tool-emoji">⚡</span>
+          </div>
+
+          <h5>Arduino Uno</h5>
+
+          <p>
+            Microcontroller projects using sensors,
+            motors, LEDs, and electronics.
+          </p>
+
+        </a>
+
+
+        <!-- RASPBERRY PI -->
+
+        <a
+          class="tool-card"
+          href="https://www.raspberrypi.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="tool-icon">
+            <span class="tool-emoji">🥧</span>
+          </div>
+
+          <h5>Raspberry Pi</h5>
+
+          <p>
+            Programming, robotics, electronics,
+            sensors, cameras, and hardware projects.
+          </p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         APPROACH
+    ================================================= -->
+
+    <div class="approach-banner reveal">
+
+      <span class="approach-icon">✦</span>
+
+      <strong>My approach:</strong>
+
+      Learn by building, experimenting, and creating
+      something you can be proud of.
+
+    </div>
+
+
+    <!-- =================================================
+         STUDENT BUILDS
+    ================================================= -->
+
+    <div class="builds">
+
+      <div class="builds-label reveal">
+        Student Builds I've Monitored
+      </div>
+
+
+      <div class="build-group-label reveal">
+
+        <span class="group-dot sw"></span>
+
+        Software Builds
+
+      </div>
+
+
+      <div class="build-grid">
+
+
+        <!-- TUBIGIFY -->
+
+        <a
+          class="build-card reveal"
+          href="https://www.youtube.com/watch?v=lq9Q9cLDYmA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="build-visual">
+
+            <img
+              src="pictures/tubigify.jpg"
+              alt="Tubigify student project"
+            >
+
+            <span class="tag">
+              SOFTWARE
+            </span>
+
+          </div>
+
+
+          <div class="build-body">
+
+            <h4>
+              Tubigify
+            </h4>
+
+            <p>
+              A student project focused on water
+              awareness and environmental education.
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <!-- OTHER BUILD PLACEHOLDERS -->
+
+        <div class="build-card reveal">
+
+          <div class="build-visual">
+
+            <img
+              src="pictures/scratch_project.jpg"
+              alt="Scratch student project"
+            >
+
+            <span class="tag">
+              SCRATCH
+            </span>
+
+          </div>
+
+          <div class="build-body">
+
+            <h4>
+              Interactive Scratch Project
+            </h4>
+
+            <p>
+              A creative coding project created
+              using Scratch.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="build-card reveal">
+
+          <div class="build-visual">
+
+            <img
+              src="pictures/mblock_project.jpg"
+              alt="mBlock 5 student project"
+            >
+
+            <span class="tag">
+              MBLOCK 5
+            </span>
+
+          </div>
+
+          <div class="build-body">
+
+            <h4>
+              mBlock Robotics
+            </h4>
+
+            <p>
+              A hands-on robotics project built
+              using mBlock 5.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="build-card reveal">
+
+          <div class="build-visual">
+
+            <img
+              src="pictures/arduino_project.jpg"
+              alt="Arduino student project"
+            >
+
+            <span class="tag">
+              ARDUINO
+            </span>
+
+          </div>
+
+          <div class="build-body">
+
+            <h4>
+              Arduino Project
+            </h4>
+
+            <p>
+              An interactive electronics project
+              using Arduino.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="build-card reveal">
+
+          <div class="build-visual">
+
+            <img
+              src="pictures/raspi_project.jpg"
+              alt="Raspberry Pi student project"
+            >
+
+            <span class="tag">
+              RASPBERRY PI
+            </span>
+
+          </div>
+
+          <div class="build-body">
+
+            <h4>
+              Raspberry Pi Project
+            </h4>
+
+            <p>
+              A Raspberry Pi project using
+              hardware and programming.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           SOFTWARE BUILDS
+      ================================================= -->
+
+      <div class="build-group-label sw-label reveal">
+
+        <span class="group-dot sw"></span>
+
+        Software Builds
+
+      </div>
+
+
+      <!-- WOMEN AND CHILDREN APP -->
+
+      <div class="sw-feature reveal">
+
+        <div class="sw-shots">
+
+          <img
+            src="pictures/wca1.jpg"
+            alt="Women and Children Abuse app screenshot"
+          >
+
+          <img
+            src="pictures/wca2.jpg"
+            alt="Women and Children Abuse app screenshot"
+          >
+
+          <img
+            src="pictures/wca3.jpg"
+            alt="Women and Children Abuse app screenshot"
+          >
+
+          <img
+            src="pictures/wca4.jpg"
+            alt="Women and Children Abuse app screenshot"
+          >
+
+        </div>
+
+
+        <div class="sw-info">
+
+          <span class="tag sw-tag">
+            MOBILE APP
+          </span>
+
+          <h4>
+            Women and Children Abuse Informative App
+          </h4>
+
+          <p>
+            An informative mobile application designed
+            to provide awareness, educational information,
+            and helpful resources regarding abuse prevention
+            and protection.
+          </p>
+
+
+          <button
+            class="apk-btn"
+            onclick="downloadAPK('https://drive.google.com/uc?export=download&id=1XREAcGHZlX70QD1t68MXa6xuxUW7GDTV')"
+          >
+            ↓ Download APK
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- OCEAN GUARD -->
+
+      <div class="sw-feature reveal">
+
+        <div class="sw-shots">
+
+          <img
+            src="pictures/ocean1.jpg"
+            alt="OCEAN Guard app screenshot"
+          >
+
+          <img
+            src="pictures/ocean2.jpg"
+            alt="OCEAN Guard app screenshot"
+          >
+
+          <img
+            src="pictures/ocean3.jpg"
+            alt="OCEAN Guard app screenshot"
+          >
+
+          <img
+            src="pictures/ocean4.jpg"
+            alt="OCEAN Guard app screenshot"
+          >
+
+        </div>
+
+
+        <div class="sw-info">
+
+          <span class="tag sw-tag">
+            MOBILE APP
+          </span>
+
+          <h4>
+            OCEAN Guard: Life Below Water
+          </h4>
+
+          <p>
+            An educational mobile app that helps users
+            learn about marine ecosystems, ocean conservation,
+            and life below the water through interactive
+            content and quizzes.
+          </p>
+
+
+          <button
+            class="apk-btn"
+            onclick="downloadAPK('https://drive.google.com/uc?export=download&id=1cS3ETqhZk9a2UQ8uds7OQq-pG_8rEJb2')"
+          >
+            ↓ Download APK
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="projects" id="projects">
+
+  <div class="wrap">
+
+    <div class="section-label reveal">
+      // 03_projects
+    </div>
+
+    <h2 class="section-title reveal">
+      Selected projects
+    </h2>
+
+    <p class="section-sub reveal">
+      A collection of creative, educational, software,
+      and development projects.
+    </p>
+
+
+    <div class="project-grid">
+
+
+      <div class="project-card reveal">
+
+        <div class="project-thumb">
+
+          <img
+            src="pictures/project1.jpg"
+            alt="Creative project"
+          >
+
+        </div>
+
+        <div class="project-info">
+
+          <h4>
+            Creative Design
+          </h4>
+
+          <p>
+            Visual design and creative development
+            project.
+          </p>
+
+          <div class="project-tag">
+            DESIGN
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card reveal">
+
+        <div class="project-thumb">
+
+          <img
+            src="pictures/project2.jpg"
+            alt="Development project"
+          >
+
+        </div>
+
+        <div class="project-info">
+
+          <h4>
+            Web Development
+          </h4>
+
+          <p>
+            Responsive web experience built
+            with HTML, CSS, and JavaScript.
+          </p>
+
+          <div class="project-tag">
+            DEVELOPMENT
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card reveal">
+
+        <div class="project-thumb">
+
+          <img
+            src="pictures/project3.jpg"
+            alt="Digital project"
+          >
+
+        </div>
+
+        <div class="project-info">
+
+          <h4>
+            Digital Project
+          </h4>
+
+          <p>
+            A creative digital project combining
+            technology and design.
+          </p>
+
+          <div class="project-tag">
+            CREATIVE
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+  <div class="wrap">
+
+    <div class="inner">
+
+      <div class="section-label reveal">
+        // 04_contact
+      </div>
+
+      <h2 class="reveal">
+        Let's build something.
+      </h2>
+
+      <p class="reveal">
+        Have a project, idea, or collaboration in mind?
+        Let's connect.
+      </p>
+
+
       <div class="socials reveal">
-        <a class="social" href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06v2.26H7.6V13h2.77v8h3.13Z"/></svg>
+
+
+        <!-- FACEBOOK -->
+
+        <a
+          class="social"
+          href="https://www.facebook.com/kienaj18/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          title="Facebook"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.7.3-1 1-1z"/>
+          </svg>
+
         </a>
-        <a class="social" href="#" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4V20h2.94V8.5ZM5.47 4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM20 20v-6.4c0-3.05-1.63-4.47-3.8-4.47-1.75 0-2.53.96-2.97 1.64V8.5H10.3c.04.86 0 11.5 0 11.5h2.93v-6.42c0-.34.02-.68.13-.93.28-.68.9-1.38 1.96-1.38 1.38 0 1.94 1.05 1.94 2.6V20H20Z"/></svg>
+
+
+        <!-- TELEGRAM -->
+
+        <a
+          class="social"
+          href="https://t.me/kienaj"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Telegram"
+          title="Telegram"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M21.9 4.1c.3-1.2-.5-1.7-1.5-1.3L2.7 9.6c-1.2.5-1.2 1.2-.2 1.5l4.5 1.4 1.7 5.4c.2.7.4.9.8.9.3 0 .5-.1.7-.3l2.1-2 4.4 3.2c.8.5 1.4.2 1.6-.8l3.6-14.8zM8.9 12.1l8.9-5.6c.4-.2.7-.1.4.2l-7.2 6.5-.3 3.1-1.8-4.2z"/>
+          </svg>
+
         </a>
-        <a class="social" href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Zm0 5.94a2.34 2.34 0 1 1 0-4.68 2.34 2.34 0 0 1 0 4.68ZM16.3 3H7.7A4.7 4.7 0 0 0 3 7.7v8.6A4.7 4.7 0 0 0 7.7 21h8.6a4.7 4.7 0 0 0 4.7-4.7V7.7A4.7 4.7 0 0 0 16.3 3Zm3.4 13.3a3.4 3.4 0 0 1-3.4 3.4H7.7a3.4 3.4 0 0 1-3.4-3.4V7.7a3.4 3.4 0 0 1 3.4-3.4h8.6a3.4 3.4 0 0 1 3.4 3.4v8.6ZM16.9 6.1a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z"/></svg>
+
+
+        <!-- EMAIL -->
+
+        <a
+          class="social"
+          href="mailto:njcasuga118@gmail.com"
+          aria-label="Email"
+          title="Email"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+
         </a>
+
+
       </div>
+
     </div>
-  </section>
-</main>
 
-<footer>&copy; 2024 Nikkie Jan Casuga. All rights reserved.</footer>
+  </div>
 
-<script src="function.js"></script>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="wrap">
+
+    © 2026 Nikkie Jan Casuga · Built with HTML, CSS & JavaScript
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
