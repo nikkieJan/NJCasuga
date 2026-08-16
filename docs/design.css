@@ -190,10 +190,11 @@
   .stat .l{font-size:12.5px; color:var(--text-mute); margin-top:6px; font-family:'IBM Plex Mono',monospace;}
 
   /* ---------- experience ---------- */
-  .experience{background:var(--porcelain);}
+ /* ---  .experience{background:var(--porcelain);}
   .exp-card{
     background:var(--paper); border-radius:18px; border:1px solid #e7e3d8;
     padding:38px; display:grid; grid-template-columns:1.3fr 1fr; gap:34px; align-items:start;
+    --- */
   }
   .exp-gallery{display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:10px;}
   .exp-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px; display:block;}
