@@ -262,8 +262,9 @@
     background:var(--ink);
   }
   .sw-shots img{width:100%;
-                height: 480px;
-                object-position: top center;
+                height: 380px;
+                object-position: contain;
+                background-color: #000;
                 aspect-ratio:9/16; 
                 object-fit:cover; 
                 border-radius:8px;
