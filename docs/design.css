@@ -190,13 +190,11 @@
   .stat .l{font-size:12.5px; color:var(--text-mute); margin-top:6px; font-family:'IBM Plex Mono',monospace;}
 
   /* ---------- experience ---------- */
-  .experience{background:var(--porcelain);}
+ /* ---  .experience{background:var(--porcelain);}
   .exp-card{
     background:var(--paper); border-radius:18px; border:1px solid #e7e3d8;
-    padding:38px;
-  }
-  .exp-top{
-    display:grid; grid-template-columns:1.3fr 1fr; gap:34px; align-items:start;
+    padding:38px; display:grid; grid-template-columns:1.3fr 1fr; gap:34px; align-items:start;
+    --- */
   }
   .exp-gallery{display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:10px;}
   .exp-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px; display:block;}
@@ -215,46 +213,6 @@
     font-family:'IBM Plex Mono',monospace; font-size:12.5px; padding:7px 13px; border-radius:7px;
     background:var(--porcelain); border:1px solid #e2ddce; color:var(--text-dark);
   }
-
-  /* tools I teach with */
-  .tools-teach{margin-top:34px; padding-top:30px; border-top:1px solid #ece8dc;}
-  .tools-heading{
-    display:flex; align-items:center; gap:9px;
-    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;
-    color:var(--text-dark); margin-bottom:18px;
-  }
-  .tools-heading-icon{width:18px; height:18px; color:var(--coral);}
-  .tools-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
-  .tool-card{
-    background:var(--porcelain); border:1px solid #e7e3d8; border-radius:12px;
-    padding:18px 16px; text-align:center; transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .tool-card:hover{transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(16,24,42,0.25);}
-  .tool-icon{
-    width:44px; height:44px; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;
-  }
-  .tool-icon svg{width:100%; height:100%;}
-  .icon-scratch{color:var(--coral);}
-  .icon-mblock{color:var(--teal);}
-  .icon-appinventor{color:var(--gold);}
-  .icon-pi{color:var(--coral-dim);}
-  .icon-arduino{color:var(--teal);}
-  .tool-card h5{
-    font-family:'Space Grotesk',sans-serif; font-size:13.5px; font-weight:700; margin:0 0 6px; color:var(--text-dark);
-  }
-  .tool-card p{
-    font-size:11.5px; color:var(--text-mute); line-height:1.5; margin:0; max-width:none;
-  }
-
-  /* approach banner */
-  .approach-banner{
-    margin-top:22px; display:flex; align-items:center; gap:12px;
-    background:rgba(232,179,74,0.12); border:1px solid rgba(232,179,74,0.35);
-    border-radius:11px; padding:14px 20px;
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--text-dark);
-  }
-  .approach-banner strong{font-family:'Space Grotesk',sans-serif; font-size:13px;}
-  .approach-icon{color:var(--gold); font-size:15px; flex-shrink:0;}
 
   /* student builds */
   .builds{margin-top:56px;}
@@ -298,23 +256,23 @@
     margin-bottom: 40px;
   }
   .sw-shots{
-    display:grid;
+    display:grid; 
     grid-template-columns:repeat(4,1fr);
     gap:15px;
     padding:22px;
     background:var(--ink);
   }
-  .sw-shots img{
-    width: 100%;
-    height: 420px;
-    aspect-ratio: 9/16;
-    object-fit: contain;
-    object-position: center;
-    background-color: var(--ink);
+  .sw-shots img{width:190%;
+    width: 100%;                  /* Fits cleanly inside the grid column without breaking */
+    height: 420px;                /* Adjust this to make them taller or shorter */
+    aspect-ratio: 9/16;           /* Maintains the correct mobile aspect ratio */
+    object-fit: contain;          /* Ensures the full app UI is visible without cutting anything off */
+    object-position: center;      /* Perfectly centers the image */
+    background-color: var(--ink); /* Seamlessly matches your background */
     border-radius: 8px;
-    display: block;
+    display: block; 
     border: 1px solid var(--ink-line);
-  }
+               }
   .sw-info{padding:30px 32px;}
   .sw-info h4{font-family:'Space Grotesk',sans-serif; font-size:19px; margin:10px 0 12px;}
   .sw-info p{font-size:14px; color:var(--text-mute); line-height:1.75; margin-bottom:18px;}
@@ -372,11 +330,10 @@
     .about-grid{grid-template-columns:1fr; gap:40px;}
     .project-grid{grid-template-columns:1fr 1fr;}
     .build-grid{grid-template-columns:1fr 1fr 1fr;}
-    .exp-top{grid-template-columns:1fr; gap:28px;}
+    .exp-card{grid-template-columns:1fr; gap:28px;}
     .exp-gallery{order:-1;}
     .sw-feature{grid-template-columns:1fr;}
     .sw-shots{grid-template-columns:repeat(4,1fr);}
-    .tools-grid{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:640px){
     .nav-links{display:none;}
@@ -391,6 +348,4 @@
     .build-grid{grid-template-columns:1fr 1fr;}
     .sw-shots{grid-template-columns:1fr 1fr; gap:10px;}
     .sw-info{padding:24px 22px;}
-    .tools-grid{grid-template-columns:1fr 1fr;}
-    .approach-banner{flex-direction:column; align-items:flex-start; gap:4px;}
   }
