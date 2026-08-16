@@ -257,7 +257,7 @@
   .sw-shots{
     display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:22px; background:var(--ink);
   }
-  .sw-shots img{width:100%; height: 350px; object-position: top center; aspect-ratio:9/16; object-fit:cover; border-radius:8px; display:block; border:1px solid var(--ink-line);}
+  .sw-shots img{width:100%; height: 280px; object-position: top center; aspect-ratio:9/16; object-fit:cover; border-radius:8px; display:block; border:1px solid var(--ink-line);}
   .sw-info{padding:30px 32px;}
   .sw-info h4{font-family:'Space Grotesk',sans-serif; font-size:19px; margin:10px 0 12px;}
   .sw-info p{font-size:14px; color:var(--text-mute); line-height:1.75; margin-bottom:18px;}
