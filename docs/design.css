@@ -348,3 +348,153 @@
     .sw-shots{grid-template-columns:1fr 1fr; gap:10px;}
     .sw-info{padding:24px 22px;}
   }
+
+/* ---------- tools I teach with ---------- */
+
+.tools-section {
+  margin-top: 30px;
+}
+
+.tools-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.tools-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  color: var(--teal);
+  font-size: 20px;
+}
+
+/* Tool cards */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tool-card {
+  background: var(--paper);
+  border: 1px solid #e7e3d8;
+  border-radius: 10px;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(23,163,152,.35);
+
+  box-shadow: 0 8px 20px rgba(20,40,60,.08);
+}
+
+/* Platform image */
+
+.tool-image {
+  width: 100%;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+
+  overflow: hidden;
+  border-radius: 7px;
+
+  background: var(--porcelain);
+}
+
+.tool-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform .25s ease;
+}
+
+.tool-card:hover .tool-image img {
+  transform: scale(1.04);
+}
+
+/* Tool title */
+
+.tool-card h4 {
+  margin: 4px 0 5px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.25;
+
+  color: var(--text-dark);
+}
+
+/* Tool description */
+
+.tool-card p {
+  margin: 0;
+
+  font-size: 10.5px;
+  line-height: 1.4;
+
+  color: var(--text-mute);
+}
+
+/* ---------- approach bar ---------- */
+
+.approach-bar {
+  margin-top: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: rgba(23,163,152,.06);
+  border: 1px solid rgba(23,163,152,.20);
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+
+  color: var(--text-mute);
+}
+
+.approach-bar strong {
+  color: var(--teal);
+}
+
+.approach-bar b {
+  color: #aaa;
+}
