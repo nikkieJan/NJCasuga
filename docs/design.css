@@ -323,12 +323,22 @@
     padding:5px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.04em;
   }
   .apk-btn{
-    margin-top:18px; display:inline-flex; align-items:center; gap:8px;
-    background:var(--ink); color:#fff; border:none; padding:11px 20px; border-radius:9px;
+    margin-top:18px; display:inline-flex; align-items:center; gap:10px;
+    background:var(--teal); color:#fff; border:none; padding:12px 22px 12px 18px; border-radius:10px;
     font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13.5px; cursor:pointer;
-    transition:transform .18s ease, background .18s ease;
+    box-shadow:0 10px 24px -10px rgba(23,163,152,0.55);
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
   }
-  .apk-btn:hover{background:var(--ink-soft); transform:translateY(-2px);}
+  .apk-btn svg{
+    width:17px; height:17px; flex-shrink:0;
+    transition:transform .25s ease;
+  }
+  .apk-btn:hover{
+    background:#149487; transform:translateY(-2px);
+    box-shadow:0 14px 30px -10px rgba(23,163,152,0.65);
+  }
+  .apk-btn:hover svg{transform:translateY(2px);}
+  .apk-btn:active{transform:translateY(0); box-shadow:0 6px 16px -8px rgba(23,163,152,0.5);}
 
   /* ---------- projects ---------- */
   .projects{background:var(--paper);}
