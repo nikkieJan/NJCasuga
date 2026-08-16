@@ -325,10 +325,20 @@
     transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column;
   }
   .project-card:hover{transform:translateY(-5px); box-shadow:0 24px 50px -24px rgba(16,24,42,0.3);}
-  .project-thumb{
-    height:150px; position:relative; overflow:hidden;
+.project-thumb {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: var(--porcelain);
+}
   }
-  .project-thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .4s ease;
+}
   .project-card:hover .project-thumb img{transform:scale(1.06);}
   .project-info{padding:20px 22px 24px; flex:1; display:flex; flex-direction:column;}
   .project-info h4{font-size:16px; font-family:'Space Grotesk',sans-serif; margin-bottom:8px;}
