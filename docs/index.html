@@ -1,160 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikkie Jan|Portfolio</title>
-    <link rel="stylesheet" href="design.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikkie Jan Casuga — Creative Developer &amp; Graphic Designer</title>
+<meta name="description" content="Portfolio of Nikkie Jan Casuga — Creative Developer, Graphic Designer, and Coding Instructor for young learners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10182a;
+    --ink-soft:#1b2540;
+    --ink-line:#2a3556;
+    --porcelain:#f6f4ee;
+    --paper:#ffffff;
+    --coral:#ff6452;
+    --coral-dim:#e05646;
+    --teal:#17a398;
+    --gold:#e8b34a;
+    --text-dark:#141b2c;
+    --text-mute:#5b6478;
+    --text-on-ink:#e9ecf5;
+    --text-on-ink-mute:#96a1c2;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--porcelain);
+    color:var(--text-dark);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif; margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit;}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(16,24,42,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ink-line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    height:66px; max-width:var(--maxw); margin:0 auto; padding:0 28px;
+  }
+  .logo{
+    color:var(--text-on-ink); font-size:16px; font-weight:600; font-family:'Space Grotesk',sans-serif;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{width:8px;height:8px;border-radius:50%;background:var(--coral); display:inline-block;}
+  .logo .dim{color:var(--text-on-ink-mute); font-weight:400; font-family:'IBM Plex Mono',monospace; font-size:14px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    color:var(--text-on-ink-mute); font-size:14px; font-family:'IBM Plex Mono',monospace;
+    position:relative; padding:4px 0; transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--text-on-ink);}
+  .nav-links a .num{color:var(--coral); margin-right:4px;}
+  .nav-cta{
+    background:var(--coral); color:#fff !important; padding:9px 18px; border-radius:8px;
+    font-family:'IBM Plex Mono',monospace !important; font-size:13px !important;
+  }
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
+  .burger span{width:22px; height:2px; background:var(--text-on-ink); display:block; transition:.25s;}
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px; background:var(--ink-soft);
+    border-bottom:1px solid var(--ink-line); padding:8px 28px 18px;
+  }
+  .mobile-menu a{
+    color:var(--text-on-ink-mute); font-family:'IBM Plex Mono',monospace; font-size:15px;
+    padding:12px 0; border-bottom:1px solid var(--ink-line);
+  }
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu.open{display:flex;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--text-on-ink);
+    padding:72px 0 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--ink-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ink-line) 1px, transparent 1px);
+    background-size:44px 44px;
+    opacity:0.14;
+    mask-image:radial-gradient(ellipse at 30% 20%, black 10%, transparent 70%);
+  }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--teal);
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--teal); display:inline-block;}
+  .hero h1{
+    font-size:clamp(36px,5vw,54px); line-height:1.08; font-weight:700;
+  }
+  .hero h1 .first{color:var(--coral);}
+  .hero h1 .last{color:var(--text-on-ink);}
+  .cursor{
+    display:inline-block; width:3px; height:0.85em; background:var(--gold);
+    margin-left:4px; animation:blink 1.1s steps(1) infinite; vertical-align:-0.05em;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .role{
+    margin-top:16px; font-size:clamp(17px,2vw,20px); color:var(--teal); font-weight:600;
+    font-family:'Space Grotesk',sans-serif;
+  }
+  .hero p.bio{
+    margin-top:20px; max-width:520px; color:var(--text-on-ink-mute); font-size:15.5px; line-height:1.7;
+  }
+  .hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:9px; font-size:14px; font-weight:600;
+    font-family:'Space Grotesk',sans-serif; cursor:pointer; border:1px solid transparent;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--coral); color:#fff;}
+  .btn-primary:hover{background:var(--coral-dim);}
+  .btn-outline{border-color:var(--ink-line); color:var(--text-on-ink);}
+  .btn-outline:hover{border-color:var(--teal); color:var(--teal);}
+
+  /* editor card (hero visual, replaces missing photo) */
+  .editor-card{
+    background:var(--ink-soft); border:1px solid var(--ink-line); border-radius:16px;
+    overflow:hidden; box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  .editor-bar{
+    display:flex; align-items:center; gap:7px; padding:12px 16px; background:#141d35;
+    border-bottom:1px solid var(--ink-line);
+  }
+  .editor-bar span{width:10px; height:10px; border-radius:50%; display:inline-block;}
+  .editor-bar .r{background:#ff5f57;} .editor-bar .y{background:#febc2e;} .editor-bar .g{background:#28c840;}
+  .editor-bar .fname{margin-left:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-on-ink-mute);}
+  .editor-body{padding:30px 26px;}
+  .monogram{
+    width:84px; height:84px; border-radius:18px;
+    background:linear-gradient(135deg, var(--coral), var(--gold) 60%, var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px; color:#101826;
+    margin-bottom:22px;
+  }
+  .code-line{font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:2; color:var(--text-on-ink-mute);}
+  .code-line .k{color:#ff9d8a;}
+  .code-line .s{color:var(--teal);}
+  .code-line .p{color:var(--gold);}
+  .badges{display:flex; gap:8px; margin-top:20px; flex-wrap:wrap;}
+  .badge{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:5px 10px; border-radius:6px;
+    background:rgba(23,163,152,0.12); color:var(--teal); border:1px solid rgba(23,163,152,0.3);
+  }
+
+  /* ---------- section shell ---------- */
+  section{padding:88px 0;}
+  .section-label{
+    display:flex; align-items:center; gap:12px; margin-bottom:12px;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--coral);
+  }
+  .section-title{font-size:clamp(26px,3.4vw,34px); font-weight:700; margin-bottom:14px;}
+  .section-sub{color:var(--text-mute); font-size:15.5px; max-width:560px; line-height:1.7; margin-bottom:48px;}
+
+  /* ---------- about strip ---------- */
+  .about{background:var(--paper);}
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;}
+  .about-text p{color:var(--text-mute); font-size:16px; line-height:1.85; margin-bottom:18px;}
+  .stat-list{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .stat{
+    background:var(--porcelain); border-radius:var(--radius); padding:22px 20px;
+    border:1px solid #e7e3d8;
+  }
+  .stat .n{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:var(--ink);}
+  .stat .l{font-size:12.5px; color:var(--text-mute); margin-top:6px; font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- experience ---------- */
+  .experience{background:var(--porcelain);}
+  .exp-card{
+    background:var(--paper); border-radius:18px; border:1px solid #e7e3d8;
+    padding:38px; display:grid; grid-template-columns:1fr; gap:0;
+  }
+  .exp-head{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
+  .exp-role{font-size:21px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  .pill{
+    background:rgba(23,163,152,0.12); color:var(--teal); font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px; padding:5px 11px; border-radius:20px; border:1px solid rgba(23,163,152,0.3);
+  }
+  .pill::before{content:"● "; font-size:8px; color:var(--teal);}
+  .exp-card p{color:var(--text-mute); font-size:15px; line-height:1.8; max-width:640px; margin-bottom:22px;}
+  .chips{display:flex; gap:9px; flex-wrap:wrap;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; padding:7px 13px; border-radius:7px;
+    background:var(--porcelain); border:1px solid #e2ddce; color:var(--text-dark);
+  }
+
+  /* student builds */
+  .builds{margin-top:44px;}
+  .builds-label{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px; margin-bottom:22px; color:var(--coral);}
+  .build-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .build-card{
+    background:var(--paper); border-radius:16px; overflow:hidden; border:1px solid #e7e3d8;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .build-card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(16,24,42,0.25);}
+  .build-visual{
+    height:170px; position:relative; display:flex; align-items:center; justify-content:center;
+  }
+  .build-visual.hardware{background:linear-gradient(135deg,#0f2f2c,#155c52);}
+  .build-visual.software{background:linear-gradient(135deg,#16233f,#1b3a6b);}
+  .build-visual .tag{
+    position:absolute; top:14px; left:14px; font-family:'IBM Plex Mono',monospace; font-size:11px;
+    color:rgba(255,255,255,0.7); letter-spacing:0.04em; text-transform:uppercase;
+  }
+  .build-body{padding:20px 22px 24px;}
+  .build-body h4{font-family:'Space Grotesk',sans-serif; font-size:16px; margin-bottom:6px;}
+  .build-body p{font-size:13.5px; color:var(--text-mute); line-height:1.6;}
+
+  /* ---------- projects ---------- */
+  .projects{background:var(--paper);}
+  .project-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .project-card{
+    border-radius:16px; overflow:hidden; background:var(--porcelain); border:1px solid #e7e3d8;
+    transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column;
+  }
+  .project-card:hover{transform:translateY(-5px); box-shadow:0 24px 50px -24px rgba(16,24,42,0.3);}
+  .project-thumb{
+    height:150px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .project-thumb svg{width:56px; height:56px; opacity:0.9;}
+  .thumb-1{background:linear-gradient(135deg,#0e6e63,#17a398 65%,#7fe6d6);}
+  .thumb-2{background:linear-gradient(135deg,#3a0f14,#c0392b 55%,#ff6452);}
+  .thumb-3{background:linear-gradient(135deg,#0c1425,#22314f 60%,#4b5d84);}
+  .project-info{padding:20px 22px 24px; flex:1; display:flex; flex-direction:column;}
+  .project-info h4{font-size:16px; font-family:'Space Grotesk',sans-serif; margin-bottom:8px;}
+  .project-info p{font-size:13.5px; color:var(--text-mute); line-height:1.65; flex:1;}
+  .project-tag{
+    margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--coral);
+  }
+
+  /* ---------- contact ---------- */
+  .contact{
+    background:var(--ink); color:var(--text-on-ink); text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .contact::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(255,100,82,0.16), transparent 55%);
+  }
+  .contact .inner{position:relative; z-index:1;}
+  .contact h2{font-size:clamp(28px,4vw,40px);}
+  .contact p{color:var(--text-on-ink-mute); margin-top:14px; font-size:15px;}
+  .socials{display:flex; gap:14px; justify-content:center; margin-top:34px;}
+  .social{
+    width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--ink-line); color:var(--text-on-ink); transition:.2s ease;
+  }
+  .social:hover{border-color:var(--teal); color:var(--teal); transform:translateY(-3px);}
+  .social svg{width:18px; height:18px;}
+
+  footer{background:#0c1220; color:var(--text-on-ink-mute); text-align:center; padding:26px 0; font-size:13px; font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .project-grid{grid-template-columns:1fr 1fr;}
+    .build-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    section{padding:64px 0;}
+    .hero{padding:48px 0 60px;}
+    .wrap{padding:0 20px;}
+    .project-grid{grid-template-columns:1fr;}
+    .stat-list{grid-template-columns:1fr 1fr;}
+    .exp-card{padding:26px 22px;}
+    .hero-actions .btn{flex:1; justify-content:center;}
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">NJC|PORTFOLIO</div>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <!---<li><a href="#contact">Contact</a></li> -->
-                </ul>
-            </nav>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo"><span class="dot"></span>NJC<span class="dim">.portfolio</span></a>
+    <div class="nav-links">
+      <a href="#about"><span class="num">01.</span>About</a>
+      <a href="#experience"><span class="num">02.</span>Experience</a>
+      <a href="#projects"><span class="num">03.</span>Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">01. About</a>
+    <a href="#experience">02. Experience</a>
+    <a href="#projects">03. Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">PORTFOLIO — CREATIVE DEVELOPMENT &amp; DESIGN</div>
+        <h1><span class="first">Nikkie Jan</span> <span class="last">Casuga</span><span class="cursor"></span></h1>
+        <div class="role">Creative Developer &amp; Graphic Designer</div>
+        <p class="bio">I combine cutting-edge technology with considered design — working across software, hardware, and networking to unite technical thinking with artistic expression. Currently teaching the next generation of builders how to code.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
-    </header>
-
-    <main>
-        <section id="about" class="container">
-            <div class="about-content">
-                <h1>Nikkie Jan Casuga</h1>
-                <h2>Creative Developer & Graphic Designer</h2>
-                <p>In the digital realm, I combine cutting-edge technology with stunning design, blending creativity. 
-                    With a passion for software, hardware, and networking, I rapidly adapt to new technologies, aiming 
-                    to harmoniously unite technical thinking with artistic expression.
-                    </p>
-            </div>
-            <div class="about-image">
-                <div class="image-container"></div>
-            </div>
-        </section>
-
-        <section id="experience" class="container">
-            <h2>Experience</h2>
-            <div class="experience-content">
-                <div class="experience-text">
-                    <h3>Coding Instructor — Young Learners</h3>
-                    <p class="experience-role">Currently teaching</p>
-                    <p>I currently teach coding to young learners, introducing them to programming logic,
-                        robotics, and app development through hands-on, age-appropriate tools. My goal is to make
-                        computational thinking fun and approachable, turning abstract concepts into projects kids
-                        can build, run, and be proud of.</p>
-                    <ul class="tools-list">
-                        <li>Scratch Jr.</li>
-                        <li>mBlock5</li>
-                        <li>MIT App Inventor</li>
-                        <li>Raspberry Pi</li>
-                        <li>Arduino</li>
-                    </ul>
-                </div>
-                <div class="experience-gallery">
-                    <div class="gallery-photo">
-                        <img src="pictures/teaching1.jpg" alt="Teaching students app development at Precious International School of Davao">
-                    </div>
-                    <div class="gallery-photo">
-                        <img src="pictures/teaching2.jpg" alt="Presenting a coding lesson to students">
-                    </div>
-                    <div class="gallery-photo">
-                        <img src="pictures/teaching3.jpg" alt="Student working on an MIT App Inventor project">
-                    </div>
-                </div>
-            </div>
-
-            <div class="student-projects">
-                <h3>Student Builds I've Mentored</h3>
-                <div class="student-projects-columns">
-                    <div class="student-showcase-column">
-                        <h4>Hardware Projects</h4>
-                        <div class="student-showcase">
-                            <div class="student-showcase-image">
-                                <img id="hardware-showcase-img" src="pictures/student-tubigify.jpg" alt="Tubigify sensor-based rainwater filtration project">
-                            </div>
-                            <p id="hardware-showcase-caption">Tubigify — sensor-based rainwater filtration</p>
-                        </div>
-                    </div>
-                    <div class="student-showcase-column">
-                        <h4>Software Projects</h4>
-                        <div class="student-showcase">
-                            <div class="student-showcase-image">
-                                <img id="software-showcase-img" src="pictures/app-slide1.jpg" alt="Women and Children Abuse Informative App">
-                            </div>
-                            <p id="software-showcase-caption">Women & Children Abuse Informative App — mobile app on RA 9262</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="container">
-            <div class="project-grid">
-                <div class="project">
-                    <div class="slideshow">
-                        <img src="pictures/Slide1.JPG" alt="Project 1 Image 1" class="active">
-                        <img src="pictures/Slide2.JPG" alt="Project 1 Image 2">
-                        <img src="pictures/Slide3.JPG" alt="Project 1 Image 3">
-                    </div>
-                    <h3>Vibrant Graduation Design</h3>
-                    <p>A colorful Graduation" Christian Colleges of Southeast Asia"</p>
-                </div>
-                <div class="project">
-                    <div class="slideshow">
-                        <img src="pictures/1.jpg" alt="Project 2 Image 1" class="active">
-                        <img src="pictures/7.jpg" alt="Project 2 Image 2">
-                        <img src="pictures/3.jpg" alt="Project 2 Image 3">
-                    </div>
-                    <h3>Artistic Design</h3>
-                    <p>A visually stunning showcase for a digital arts</p>
-                </div>
-                <div class="project">
-                    <div class="slideshow">
-                        <img src="pictures/4.jpg" alt="Project 3 Image 1" class="active">
-                        <img src="pictures/8.jpg" alt="Project 3 Image 2">
-                        <img src="pictures/6.jpg" alt="Project 3 Image 3">
-                    </div>
-                    <h3>Playful Task Photographer</h3>
-                    <p>A fun and engaging task for  daily life</p>
-                </div>
-            </div>
-        </section>
-
-      <section id="contact" class="container">
-            <h2>Let's Create Together</h2>
-            <div class="social-icons">
-                <a href="https://facebook.com/undefined0118" target="_blank" class="social-icon">
-                    <img src="pictures/facebook-6549798_1920.jpg" alt="Skype" class="icon-image1">
-                </a>
-                <a href="http://linkedin.com/in/nj-casuga-52a50a2aa" target="_blank" class="social-icon">
-                    <img src="pictures/linked-in-2668696_1920.png" alt="Skype" class="icon-image2">
-            
-                <a href="https://join.skype.com/invite/v2xzFOK1f9bf" target="_blank" class="social-icon">
-                    <img src="pictures/skype-3384016_1920.png" alt="Skype" class="icon-image3">
-                </a>
-            </div>
-          <!---  <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>-->
-        </section>
-    
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Nikkie Jan Casuga. All rights reserved.</p>
-           
+      </div>
+      <div class="editor-card reveal">
+        <div class="editor-bar">
+          <span class="r"></span><span class="y"></span><span class="g"></span>
+          <span class="fname">about-me.js</span>
         </div>
-    </footer>
-    <script src="function.js"></script>
+        <div class="editor-body">
+          <div class="monogram">NJC</div>
+          <div class="code-line">
+            <span class="k">const</span> developer = &#123;<br>
+            &nbsp;&nbsp;name: <span class="s">"Nikkie Jan Casuga"</span>,<br>
+            &nbsp;&nbsp;role: <span class="s">"Creative Developer"</span>,<br>
+            &nbsp;&nbsp;teaches: <span class="s">"Coding for Kids"</span>,<br>
+            &nbsp;&nbsp;stack: [<span class="s">"Design"</span>, <span class="s">"Code"</span>, <span class="s">"Hardware"</span>]<br>
+            &#125;;
+          </div>
+          <div class="badges">
+            <span class="badge">Available for work</span>
+            <span class="badge">Davao, PH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="section-label">// 01_about</div>
+        <h2 class="section-title">A little about my process</h2>
+        <div class="about-text">
+          <p>In the digital realm, I combine cutting-edge technology with stunning design, blending creativity with craft. With a passion for software, hardware, and networking, I rapidly adapt to new technologies.</p>
+          <p>My aim is to harmoniously unite technical thinking with artistic expression — whether that's a piece of graphic design, a working prototype, or a lesson plan that turns a young learner into a builder.</p>
+        </div>
+      </div>
+      <div class="stat-list reveal">
+        <div class="stat"><div class="n">5+</div><div class="l">TOOLS &amp; PLATFORMS TAUGHT</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">STUDENT-MENTORED BUILDS</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">DESIGN DISCIPLINES</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">HANDS-ON TEACHING</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-label reveal">// 02_experience</div>
+      <h2 class="section-title reveal">Where I've been building</h2>
+      <p class="section-sub reveal">Teaching, mentoring, and shipping small projects with the people I teach.</p>
+
+      <div class="exp-card reveal">
+        <div class="exp-head">
+          <div class="exp-role">Coding Instructor — Young Learners</div>
+          <span class="pill">Currently teaching</span>
+        </div>
+        <p>I currently teach coding to young learners, introducing them to programming logic, robotics, and app development through hands-on, age-appropriate tools. My goal is to make computational thinking fun and approachable — turning abstract concepts into projects kids can build, run, and be proud of.</p>
+        <div class="chips">
+          <span class="chip">Scratch Jr.</span>
+          <span class="chip">mBlock5</span>
+          <span class="chip">MIT App Inventor</span>
+          <span class="chip">Raspberry Pi</span>
+          <span class="chip">Arduino</span>
+        </div>
+
+        <div class="builds">
+          <div class="builds-label">Student Builds I've Mentored</div>
+          <div class="build-grid">
+            <div class="build-card">
+              <div class="build-visual hardware">
+                <span class="tag">Hardware Project</span>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 6c8 10 16 20 16 30a16 16 0 1 1-32 0c0-10 8-20 16-30Z" stroke="#eafff9" stroke-width="2.5"/>
+                  <path d="M24 38c0 4.4 3.6 8 8 8" stroke="#7fe6d6" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="build-body">
+                <h4>Tubigify</h4>
+                <p>Sensor-based rainwater filtration system that monitors water quality in real time.</p>
+              </div>
+            </div>
+            <div class="build-card">
+              <div class="build-visual software">
+                <span class="tag">Software Project</span>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="22" stroke="#cfe0ff" stroke-width="2.5"/>
+                  <path d="M32 10c6 6 9 14 9 22s-3 16-9 22c-6-6-9-14-9-22s3-16 9-22Z" stroke="#8fb1ff" stroke-width="2"/>
+                  <path d="M10 32h44" stroke="#8fb1ff" stroke-width="2"/>
+                  <circle cx="24" cy="24" r="2.5" fill="#ff6452"/>
+                  <circle cx="40" cy="20" r="2.5" fill="#e8b34a"/>
+                  <circle cx="44" cy="38" r="2.5" fill="#ff6452"/>
+                  <circle cx="20" cy="42" r="2.5" fill="#17a398"/>
+                </svg>
+              </div>
+              <div class="build-body">
+                <h4>Sulong Kalikasan</h4>
+                <p>Interactive map of environmental structures and initiatives across the globe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-label reveal">// 03_projects</div>
+      <h2 class="section-title reveal">Selected design work</h2>
+      <p class="section-sub reveal">A mix of brand, print, and everyday creative experiments.</p>
+
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-thumb thumb-1">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M32 8l20 8v14c0 13-8.6 21.4-20 26-11.4-4.6-20-13-20-26V16l20-8Z" stroke="#eafff9" stroke-width="2.5"/><path d="M23 32l6 6 12-13" stroke="#eafff9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="project-info">
+            <h4>Vibrant Graduation Design</h4>
+            <p>A colorful graduation identity created for Colleges of Southeast Asia — Christian.</p>
+            <div class="project-tag">Graphic Design</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-thumb thumb-2">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M12 46c6-16 10-24 20-24s14 8 20 24" stroke="#ffe1db" stroke-width="2.5" stroke-linecap="round"/><path d="M22 30c2-8 5-14 10-18 5 4 8 10 10 18" stroke="#ff9d8a" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="project-info">
+            <h4>Artistic Design — "Be Brilliant"</h4>
+            <p>A visually striking neon-style showcase piece exploring digital art and light.</p>
+            <div class="project-tag">Digital Art</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-thumb thumb-3">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M8 40c8-4 14-12 18-22 2 8 8 14 16 16-6 2-10 6-12 12-4-4-14-6-22-6Z" stroke="#e6ecff" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="project-info">
+            <h4>Playful Task Photographer</h4>
+            <p>A fun, engaging photography exercise built into a daily creative habit.</p>
+            <div class="project-tag">Photography</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap inner">
+      <div class="section-label reveal" style="justify-content:center;">// 04_contact</div>
+      <h2 class="reveal">Let's create together</h2>
+      <p class="reveal">Open to collaborations in design, development, and tech education.</p>
+      <div class="socials reveal">
+        <a class="social" href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06v2.26H7.6V13h2.77v8h3.13Z"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4V20h2.94V8.5ZM5.47 4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM20 20v-6.4c0-3.05-1.63-4.47-3.8-4.47-1.75 0-2.53.96-2.97 1.64V8.5H10.3c.04.86 0 11.5 0 11.5h2.93v-6.42c0-.34.02-.68.13-.93.28-.68.9-1.38 1.96-1.38 1.38 0 1.94 1.05 1.94 2.6V20H20Z"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Zm0 5.94a2.34 2.34 0 1 1 0-4.68 2.34 2.34 0 0 1 0 4.68ZM16.3 3H7.7A4.7 4.7 0 0 0 3 7.7v8.6A4.7 4.7 0 0 0 7.7 21h8.6a4.7 4.7 0 0 0 4.7-4.7V7.7A4.7 4.7 0 0 0 16.3 3Zm3.4 13.3a3.4 3.4 0 0 1-3.4 3.4H7.7a3.4 3.4 0 0 1-3.4-3.4V7.7a3.4 3.4 0 0 1 3.4-3.4h8.6a3.4 3.4 0 0 1 3.4 3.4v8.6ZM16.9 6.1a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 2024 Nikkie Jan Casuga. All rights reserved.</footer>
+
+<script>
+  // mobile menu toggle
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
