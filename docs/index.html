@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikkie Jan Casuga — Creative Developer &amp; Graphic Designer</title>
+<meta name="description" content="Portfolio of Nikkie Jan Casuga — Creative Developer, Graphic Designer, and Coding Instructor for young learners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo"><span class="dot"></span>NJC<span class="dim">.portfolio</span></a>
+    <div class="nav-links">
+      <a href="#about"><span class="num">01.</span>About</a>
+      <a href="#experience"><span class="num">02.</span>Experience</a>
+      <a href="#projects"><span class="num">03.</span>Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">01. About</a>
+    <a href="#experience">02. Experience</a>
+    <a href="#projects">03. Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">PORTFOLIO — CREATIVE DEVELOPMENT &amp; DESIGN</div>
+        <h1><span class="first">Nikkie Jan</span> <span class="last">Casuga</span><span class="cursor"></span></h1>
+        <div class="role">Creative Developer &amp; Graphic Designer</div>
+        <p class="bio">I combine cutting-edge technology with considered design — working across software, hardware, and networking to unite technical thinking with artistic expression. Currently teaching the next generation of builders how to code.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div>
+        <div class="photo-card reveal">
+          <span class="photo-tag"><span class="dot"></span>Available for work</span>
+          <img src="pictures/portrait-hero.jpg" alt="Portrait of Nikkie Jan Casuga">
+          <div class="photo-caption"><strong>Nikkie Jan Casuga</strong>Creative Developer &amp; Graphic Designer</div>
+        </div>
+        <div class="badges">
+          <span class="badge">Software</span>
+          <span class="badge">Hardware</span>
+          <span class="badge">Networking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="section-label">// 01_about</div>
+        <h2 class="section-title">A little about my process</h2>
+        <div class="about-text">
+          <p>In the digital realm, I combine cutting-edge technology with stunning design, blending creativity with craft. With a passion for software, hardware, and networking, I rapidly adapt to new technologies.</p>
+          <p>My aim is to harmoniously unite technical thinking with artistic expression — whether that's a piece of graphic design, a working prototype, or a lesson plan that turns a young learner into a builder.</p>
+        </div>
+      </div>
+      <div class="stat-list reveal">
+        <div class="stat"><div class="n">5+</div><div class="l">TOOLS &amp; PLATFORMS TAUGHT</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">STUDENT-MENTORED BUILDS</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">DESIGN DISCIPLINES</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">HANDS-ON TEACHING</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-label reveal">// 02_experience</div>
+      <h2 class="section-title reveal">Where I've been building</h2>
+      <p class="section-sub reveal">Teaching, mentoring, and shipping small projects with the people I teach.</p>
+
+      <div class="exp-card reveal">
+        <div>
+          <div class="exp-head">
+            <div class="exp-role">Coding Instructor — Young Learners</div>
+            <span class="pill">Currently teaching</span>
+          </div>
+          <p>I currently teach coding to young learners, introducing them to programming logic, robotics, and app development through hands-on, age-appropriate tools. My goal is to make computational thinking fun and approachable — turning abstract concepts into projects kids can build, run, and be proud of.</p>
+          <div class="chips">
+            <span class="chip">Scratch Jr.</span>
+            <span class="chip">mBlock5</span>
+            <span class="chip">MIT App Inventor</span>
+            <span class="chip">Raspberry Pi</span>
+            <span class="chip">Arduino</span>
+          </div>
+        </div>
+
+        <div class="exp-gallery">
+          <img class="g-big" src="pictures/teach_group.jpg" alt="Nikkie Jan Casuga teaching MIT App Inventor at Precious International School of Davao">
+          <img class="g-small" src="pictures/teaching2.jpg" alt="Nikkie Jan Casuga presenting a coding lesson to students">
+          <img class="g-small" src="pictures/teaching3.jpg" alt="Student building a project in MIT App Inventor">
+        </div>
+      </div>
+
+      <div class="builds reveal">
+        <div class="builds-label">Student Builds I've Mentored</div>
+
+        <div class="build-group-label">
+          <span class="group-dot hw"></span>Hardware Builds
+        </div>
+        <div class="build-grid hw-grid">
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="pictures/hw_tubigify.jpg" alt="Tubigify sensor-based rainwater filtration prototype">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Tubigify</h4>
+              <p>Sensor-based rainwater filtration system that monitors water quality in real time.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="pictures/hw_pluvitech.jpg" alt="Pluvitech responsive sensor system project display">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Pluvitech</h4>
+              <p>Responsive sensor system that reacts to rainfall to protect and manage a model structure.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="pictures/hw_soil_irrigation.jpg" alt="Soil irrigation system project with moisture sensors">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Soil Irrigation System</h4>
+              <p>Automated watering model that reads soil moisture and irrigates dry and wet zones on cue.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="pictures/hw_smart_glasses.jpg" alt="Smart glasses prototype with ultrasonic obstacle sensors">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Smart Glasses</h4>
+              <p>Wearable prototype using ultrasonic sensors to detect nearby obstacles for the wearer.</p>
+            </div>
+          </div>
+          <div class="build-card">
+            <div class="build-visual">
+              <img src="pictures/hw_bike_sensor.jpg" alt="Arduino bike speed sensor prototype with LCD readout">
+              <span class="tag">Hardware</span>
+            </div>
+            <div class="build-body">
+              <h4>Bike Speed Sensor</h4>
+              <p>Arduino-based sensor rig that reads and displays cycling speed on a live LCD readout.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="build-group-label sw-label">
+          <span class="group-dot sw"></span>Software Builds
+        </div>
+        <div class="sw-feature">
+          <div class="sw-shots">
+            <img src="pictures/app-slide1.jpg" alt="Women and Children Abuse Informative App home screen">
+            <img src="pictures/app-slide2.jpg" alt="App FAQ screen explaining RA 9262">
+            <img src="pictures/app-slide3.jpg" alt="App quiz screen with multiple choice question">
+            <img src="pictures/app-slide4.jpg" alt="App seek-help screen with DSWD and PNP contacts">
+          </div>
+          <div class="sw-info">
+            <span class="tag sw-tag">Software</span>
+            <h4>Women &amp; Children Abuse Informative App</h4>
+            <p>A mobile app built with a student team to raise awareness around RA 9262. It walks users through plain-language FAQs, tests understanding with an interactive quiz, and connects them directly to local support — DSWD and PNP — through a Seek Help directory.</p>
+            <div class="chips">
+              <span class="chip">MIT App Inventor</span>
+              <span class="chip">Team Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-label reveal">// 03_projects</div>
+      <h2 class="section-title reveal">Selected design work</h2>
+      <p class="section-sub reveal">A mix of brand, print, and everyday creative experiments.</p>
+
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="pictures/design-csa-graduation.jpg" alt="Vibrant graduation design for Colleges of Southeast Asia">
+          </div>
+          <div class="project-info">
+            <h4>Vibrant Graduation Design</h4>
+            <p>A colorful graduation identity created for Colleges of Southeast Asia — Christian.</p>
+            <div class="project-tag">Graphic Design</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="pictures/design-be-brilliant-neon.jpg" alt="Be Brilliant neon-style digital art piece">
+          </div>
+          <div class="project-info">
+            <h4>Artistic Design — "Be Brilliant"</h4>
+            <p>A visually striking neon-style showcase piece exploring digital art and light.</p>
+            <div class="project-tag">Digital Art</div>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="pictures/design-bird-photography.jpg" alt="Bird in flight, a playful daily photography task">
+          </div>
+          <div class="project-info">
+            <h4>Playful Task Photographer</h4>
+            <p>A fun, engaging photography exercise built into a daily creative habit.</p>
+            <div class="project-tag">Photography</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap inner">
+      <div class="section-label reveal" style="justify-content:center;">// 04_contact</div>
+      <h2 class="reveal">Let's create together</h2>
+      <p class="reveal">Open to collaborations in design, development, and tech education.</p>
+      <div class="socials reveal">
+        <a class="social" href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06v2.26H7.6V13h2.77v8h3.13Z"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4V20h2.94V8.5ZM5.47 4a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM20 20v-6.4c0-3.05-1.63-4.47-3.8-4.47-1.75 0-2.53.96-2.97 1.64V8.5H10.3c.04.86 0 11.5 0 11.5h2.93v-6.42c0-.34.02-.68.13-.93.28-.68.9-1.38 1.96-1.38 1.38 0 1.94 1.05 1.94 2.6V20H20Z"/></svg>
+        </a>
+        <a class="social" href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Zm0 5.94a2.34 2.34 0 1 1 0-4.68 2.34 2.34 0 0 1 0 4.68ZM16.3 3H7.7A4.7 4.7 0 0 0 3 7.7v8.6A4.7 4.7 0 0 0 7.7 21h8.6a4.7 4.7 0 0 0 4.7-4.7V7.7A4.7 4.7 0 0 0 16.3 3Zm3.4 13.3a3.4 3.4 0 0 1-3.4 3.4H7.7a3.4 3.4 0 0 1-3.4-3.4V7.7a3.4 3.4 0 0 1 3.4-3.4h8.6a3.4 3.4 0 0 1 3.4 3.4v8.6ZM16.9 6.1a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 2024 Nikkie Jan Casuga. All rights reserved.</footer>
+
+<script src="function.js"></script>
+</body>
+</html>
