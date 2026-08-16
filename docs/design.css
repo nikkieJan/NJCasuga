@@ -262,14 +262,15 @@
     background:var(--ink);
   }
   .sw-shots img{width:190%;
-                height: 250px;
-                object-position: center;
-                background-color: #000;
-                aspect-ratio:9/16; 
-                object-fit:cover; 
-                border-radius:8px;
-                display:block; 
-                border:1px solid var(--ink-line);
+    width: 100%;                  /* Fits cleanly inside the grid column without breaking */
+    height: 420px;                /* Adjust this to make them taller or shorter */
+    aspect-ratio: 9/16;           /* Maintains the correct mobile aspect ratio */
+    object-fit: contain;          /* Ensures the full app UI is visible without cutting anything off */
+    object-position: center;      /* Perfectly centers the image */
+    background-color: var(--ink); /* Seamlessly matches your background */
+    border-radius: 8px;
+    display: block; 
+    border: 1px solid var(--ink-line);
                }
   .sw-info{padding:30px 32px;}
   .sw-info h4{font-family:'Space Grotesk',sans-serif; font-size:19px; margin:10px 0 12px;}
