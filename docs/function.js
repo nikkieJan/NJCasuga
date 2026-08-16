@@ -51,18 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Start slideshows
 startSlideshows();
 
-// Student project showcase: one photo at a time, rotating every 3 seconds
-function startStudentShowcase() {
-    const img = document.getElementById('student-showcase-img');
-    const caption = document.getElementById('student-showcase-caption');
+// Student project showcases: one photo at a time per category, rotating every 3 seconds
+function startShowcase(imgId, captionId, items) {
+    const img = document.getElementById(imgId);
+    const caption = document.getElementById(captionId);
     if (!img || !caption) return;
-
-    const items = [
-        { src: 'pictures/student-tubigify.jpg', alt: 'Tubigify sensor-based rainwater filtration project', caption: 'Tubigify — sensor-based rainwater filtration' },
-        { src: 'pictures/student-pluvitech.jpg', alt: 'Pluvitech responsive sensor system project', caption: 'Pluvitech — responsive sensor system' },
-        { src: 'pictures/student-soil.jpg', alt: 'Soil irrigation system project', caption: 'Soil Irrigation System — automated watering' },
-        { src: 'pictures/app-slide1.jpg', alt: 'Women and Children Abuse Informative App', caption: 'Women & Children Abuse Informative App — mobile app on RA 9262' }
-    ];
 
     let currentIndex = 0;
 
@@ -78,4 +71,21 @@ function startStudentShowcase() {
     }, 3000);
 }
 
-startStudentShowcase();
+const hardwareItems = [
+    { src: 'pictures/student-tubigify.jpg', alt: 'Tubigify sensor-based rainwater filtration project', caption: 'Tubigify — sensor-based rainwater filtration' },
+    { src: 'pictures/student-pluvitech.jpg', alt: 'Pluvitech responsive sensor system project', caption: 'Pluvitech — responsive sensor system' },
+    { src: 'pictures/student-soil.jpg', alt: 'Soil irrigation system project', caption: 'Soil Irrigation System — automated watering' }
+];
+
+const softwareItems = [
+    { src: 'pictures/app-slide1.jpg', alt: 'Women and Children Abuse Informative App', caption: 'Women & Children Abuse Informative App — mobile app on RA 9262' },
+    { src: 'pictures/software-sulongkalikasan1.jpg', alt: 'Sulong Kalikasan environmental awareness app welcome screen', caption: 'Sulong Kalikasan — uniting the youth for a greener future' },
+    { src: 'pictures/software-sulongkalikasan2.jpg', alt: 'Sulong Kalikasan interactive map screen', caption: 'Sulong Kalikasan — interactive structures map' },
+    { src: 'pictures/software-kabihasnan1.jpg', alt: 'Kabihasnan educational game menu', caption: 'Kabihasnan — educational game menu' },
+    { src: 'pictures/software-kabihasnan2.jpg', alt: 'Kabihasnan earth science fault quiz', caption: 'Kabihasnan — earth science quiz module' },
+    { src: 'pictures/software-kabihasnan3.jpg', alt: 'Kabihasnan science room', caption: 'Kabihasnan — science room module' },
+    { src: 'pictures/software-precalc.jpg', alt: 'Pre Calculus to Calculus Learning Guide app', caption: 'Pre Calculus to Calculus Learning Guide' }
+];
+
+startShowcase('hardware-showcase-img', 'hardware-showcase-caption', hardwareItems);
+startShowcase('software-showcase-img', 'software-showcase-caption', softwareItems);
