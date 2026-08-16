@@ -50,3 +50,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Start slideshows
 startSlideshows();
+
+// Student project showcase: one photo at a time, rotating every 3 seconds
+function startStudentShowcase() {
+    const img = document.getElementById('student-showcase-img');
+    const caption = document.getElementById('student-showcase-caption');
+    if (!img || !caption) return;
+
+    const items = [
+        { src: 'pictures/student-tubigify.jpg', alt: 'Tubigify sensor-based rainwater filtration project', caption: 'Tubigify — sensor-based rainwater filtration' },
+        { src: 'pictures/student-pluvitech.jpg', alt: 'Pluvitech responsive sensor system project', caption: 'Pluvitech — responsive sensor system' },
+        { src: 'pictures/student-soil.jpg', alt: 'Soil irrigation system project', caption: 'Soil Irrigation System — automated watering' },
+        { src: 'pictures/app-slide1.jpg', alt: 'Women and Children Abuse Informative App', caption: 'Women & Children Abuse Informative App — mobile app on RA 9262' }
+    ];
+
+    let currentIndex = 0;
+
+    setInterval(() => {
+        img.classList.add('fade');
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            img.src = items[currentIndex].src;
+            img.alt = items[currentIndex].alt;
+            caption.textContent = items[currentIndex].caption;
+            img.classList.remove('fade');
+        }, 400);
+    }, 3000);
+}
+
+startStudentShowcase();
