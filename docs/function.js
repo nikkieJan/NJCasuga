@@ -130,16 +130,16 @@ document.addEventListener('keydown', (e) => {
 // =====================================================
 // CONTACT FORM
 // =====================================================
-// Static site, no backend — "sending" opens the visitor's email
-// client with a pre-filled message addressed to you.
+// Static site, no backend — submissions are sent via Web3Forms,
+// which relays them straight to your inbox without needing a server.
 
-const CONTACT_EMAIL = 'njcasuga118@gmail.com';
+const WEB3FORMS_ACCESS_KEY = '5ac1e75a-3c74-4b05-bdda-832914cf2af3';
 
 const contactForm = document.getElementById('contact-form');
 const formNote = document.getElementById('formNote');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const name = document.getElementById('cf-name').value.trim();
@@ -148,17 +148,54 @@ if (contactForm) {
     const message = document.getElementById('cf-message').value.trim();
 
     if (!name || !email || !reason || !message) {
-      formNote.textContent = 'Please fill in every field before sending.';
       formNote.classList.add('error');
+      formNote.textContent = 'Please fill in every field before sending.';
       return;
     }
 
-    const subject = encodeURIComponent(`Portfolio inquiry: ${reason} — from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})\nReason: ${reason}`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-
+    const submitBtn = contactForm.querySelector('.form-submit');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
     formNote.classList.remove('error');
-    formNote.textContent = 'Opening your email app — thanks for reaching out!';
-    contactForm.reset();
+    formNote.textContent = '';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Portfolio inquiry: ${reason} — from ${name}`,
+          from_name: name,
+          name: name,
+          email: email,
+          reason: reason,
+          message: message
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formNote.classList.remove('error');
+        formNote.textContent = 'Message sent — thanks for reaching out! I\'ll get back to you soon.';
+        contactForm.reset();
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      formNote.classList.add('error');
+      formNote.textContent = 'Something went wrong sending your message. Please try again or email me directly.';
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    }
   });
 }
