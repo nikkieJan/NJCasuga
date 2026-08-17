@@ -211,9 +211,16 @@
 
       </div>
 
-      <div class="builds reveal">
-        <div class="builds-label">Student Builds I've Mentored</div>
+      <div class="builds" id="buildsPanel">
+        <div class="builds-header">
+          <div class="builds-label" id="buildsLabel">Student Builds I've Mentored</div>
+          <button type="button" class="builds-close" id="buildsClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            Back to categories
+          </button>
+        </div>
 
+        <div class="build-group" id="hardwareBuildsGroup" data-group="arduino">
         <div class="build-group-label">
           <span class="group-dot hw"></span>Hardware Builds
         </div>
@@ -269,7 +276,9 @@
             </div>
           </div>
         </div>
+        </div>
 <!-- SOFTWARE PROJECT 1 -->
+        <div class="build-group" id="softwareBuildsGroup" data-group="app-inventor">
         <div class="build-group-label sw-label">
           <span class="group-dot sw"></span>Software Builds
         </div>
@@ -319,6 +328,11 @@
           </div>
         </div>
   <!-- SOFTWARE PROJECT 2.1 -->
+        </div>
+
+        <div class="build-empty-state" id="buildsEmptyState">
+          <p>No builds published for <strong id="buildsEmptyCategory">this platform</strong> yet — check back soon!</p>
+        </div>
       </div>
     </div>
   </section>
@@ -326,13 +340,13 @@
   <!-- PROJECTS -->
   <section class="projects" id="projects">
     <div class="wrap">
-      <div class="section-label reveal">// 03_projects</div>
-      <h2 class="section-title reveal">Selected design work</h2>
-      <p class="section-sub reveal">A mix of brand, print, and everyday creative experiments.</p>
+      <div class="section-label reveal">// 03_categories</div>
+      <h2 class="section-title reveal">Browse by category</h2>
+      <p class="section-sub reveal">Tap a platform to see the projects built with it.</p>
 
-      <div class="project-grid">
-         <!-- PROJECT 1 -->
-        <div class="project-card reveal">
+      <div class="project-grid" id="categoryGrid">
+         <!-- CATEGORY 1 -->
+        <div class="project-card category-card reveal" data-category="scratch" tabindex="0" role="button" aria-pressed="false">
           <div class="project-thumb">
             <img src="pictures/Scratch.png" alt="Scratch visual programming projects">
           </div>
@@ -340,10 +354,11 @@
             <h4>Scratch</h4>
             <p>Block-based visual programming used to teach stories, animations, and games.</p>
             <div class="project-tag">Coding Platform</div>
+            <div class="view-hint">View projects <span class="arrow">→</span></div>
           </div>
         </div>
-        <!-- PROJECT 2 -->
-        <div class="project-card reveal">
+        <!-- CATEGORY 2 -->
+        <div class="project-card category-card reveal" data-category="mblock" tabindex="0" role="button" aria-pressed="false">
           <div class="project-thumb">
             <img src="pictures/MBLOCK.png" alt="mBlock robotics and AI projects">
           </div>
@@ -351,10 +366,11 @@
             <h4>mBlock</h4>
             <p>Block-based coding extended into robotics, electronics, and AI projects.</p>
             <div class="project-tag">Coding Platform</div>
+            <div class="view-hint">View projects <span class="arrow">→</span></div>
           </div>
         </div>
-        <!-- PROJECT 3 -->
-        <div class="project-card reveal">
+        <!-- CATEGORY 3 -->
+        <div class="project-card category-card reveal" data-category="app-inventor" tabindex="0" role="button" aria-pressed="false">
           <div class="project-thumb">
             <img src="pictures/MIT app inventor.png" alt="MIT App Inventor mobile app projects">
           </div>
@@ -362,10 +378,11 @@
             <h4>MIT App Inventor</h4>
             <p>Visual, blocks-based platform for building real, working mobile apps.</p>
             <div class="project-tag">Coding Platform</div>
+            <div class="view-hint">View projects <span class="arrow">→</span></div>
           </div>
         </div>
-        <!-- PROJECT 4 -->
-         <div class="project-card reveal">
+        <!-- CATEGORY 4 -->
+         <div class="project-card category-card reveal" data-category="arduino" tabindex="0" role="button" aria-pressed="false">
           <div class="project-thumb">
             <img src="pictures/Arduino.png" alt="Arduino electronics and microcontroller projects">
           </div>
@@ -373,10 +390,11 @@
             <h4>Arduino</h4>
             <p>Microcontroller programming for sensors, circuits, and hands-on electronics.</p>
             <div class="project-tag">Hardware Platform</div>
+            <div class="view-hint">View projects <span class="arrow">→</span></div>
           </div>
         </div>
-        <!-- PROJECT 5 -->
-         <div class="project-card reveal">
+        <!-- CATEGORY 5 -->
+         <div class="project-card category-card reveal" data-category="raspberry-pi" tabindex="0" role="button" aria-pressed="false">
           <div class="project-thumb">
             <img src="pictures/raspi.png" alt="Raspberry Pi computing projects">
           </div>
@@ -384,9 +402,10 @@
             <h4>Raspberry Pi</h4>
             <p>Single-board computing for programming, robotics, and embedded projects.</p>
             <div class="project-tag">Hardware Platform</div>
+            <div class="view-hint">View projects <span class="arrow">→</span></div>
           </div>
         </div>
-         <!-- PROJECT end -->
+         <!-- CATEGORY end -->
       </div>
     </div>
   </section>
