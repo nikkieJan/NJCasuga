@@ -85,6 +85,80 @@ function downloadAPK(url) {
 
 
 // =====================================================
+// PROJECT CATEGORIES → STUDENT BUILDS FILTER
+// =====================================================
+
+const categoryCards = document.querySelectorAll('.category-card');
+const buildsPanel = document.getElementById('buildsPanel');
+const buildsLabel = document.getElementById('buildsLabel');
+const buildsClose = document.getElementById('buildsClose');
+const buildGroups = document.querySelectorAll('.build-group');
+const buildsEmptyState = document.getElementById('buildsEmptyState');
+const buildsEmptyCategory = document.getElementById('buildsEmptyCategory');
+
+const CATEGORY_LABELS = {
+  'scratch': 'Scratch',
+  'mblock': 'mBlock5',
+  'app-inventor': 'MIT App Inventor',
+  'arduino': 'Arduino',
+  'raspberry-pi': 'Raspberry Pi'
+};
+
+function showCategory(category) {
+  // highlight the selected card
+  categoryCards.forEach(card => {
+    const isActive = card.dataset.category === category;
+    card.classList.toggle('active', isActive);
+    card.setAttribute('aria-pressed', isActive);
+  });
+
+  // hide every build group + empty state first
+  buildGroups.forEach(group => group.classList.remove('show'));
+  if (buildsEmptyState) buildsEmptyState.classList.remove('show');
+
+  // show the group that matches this category, or the empty state
+  const matchedGroup = document.querySelector(`.build-group[data-group="${category}"]`);
+  const label = CATEGORY_LABELS[category] || 'This platform';
+
+  if (matchedGroup) {
+    matchedGroup.classList.add('show');
+  } else if (buildsEmptyState) {
+    buildsEmptyState.classList.add('show');
+    if (buildsEmptyCategory) buildsEmptyCategory.textContent = label;
+  }
+
+  if (buildsLabel) buildsLabel.textContent = `${label} Projects`;
+
+  if (buildsPanel) {
+    buildsPanel.classList.add('open', 'in');
+    buildsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function closeBuilds() {
+  if (buildsPanel) buildsPanel.classList.remove('open');
+  categoryCards.forEach(card => {
+    card.classList.remove('active');
+    card.setAttribute('aria-pressed', 'false');
+  });
+}
+
+categoryCards.forEach(card => {
+  card.addEventListener('click', () => showCategory(card.dataset.category));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showCategory(card.dataset.category);
+    }
+  });
+});
+
+if (buildsClose) {
+  buildsClose.addEventListener('click', closeBuilds);
+}
+
+
+// =====================================================
 // CONTACT MODAL
 // =====================================================
 
